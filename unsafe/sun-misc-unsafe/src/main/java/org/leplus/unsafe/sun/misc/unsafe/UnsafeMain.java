@@ -10,10 +10,12 @@ import sun.misc.Unsafe;
  * @author Thomas Leplus
  * @since 1.0.0
  */
-public class UnsafeMain {
+public final class UnsafeMain {
 
   /** Private constructor for utility class. */
-  private UnsafeMain() {}
+  private UnsafeMain() {
+    // Prevents instantiation.
+  }
 
   /**
    * This is the entrypoint method to run the POC.
