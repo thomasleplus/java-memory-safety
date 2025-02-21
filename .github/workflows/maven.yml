@@ -32,7 +32,7 @@ jobs:
       matrix:
         java: [8, 11, 17, 21]
         subproject: ["unsafe/sun-misc-unsafe"]
-    name: Java ${{ matrix.java }} - ${{ matrix.subproject }}
+    name: ${{ matrix.subproject }} - Java ${{ matrix.java }}
     steps:
       - name: Set REPOSITORY
         run: echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
@@ -43,7 +43,7 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - name: Build with Maven
-        working-directory: "./${{ matrix.subproject }}"
+        working-directory: ${{ matrix.subproject }}
         run: |
           # Forcing dependency check version to a version compatible
           # with Java 8 since version does not matter due to
@@ -59,4 +59,4 @@ jobs:
           name: ${{ env.REPOSITORY }}
           path: target/
       - name: Clean up
-        run: rm "${HOME}/${{ matrix.subproject }}/.m2/settings.xml"
+        run: rm "${HOME}/.m2/settings.xml"
