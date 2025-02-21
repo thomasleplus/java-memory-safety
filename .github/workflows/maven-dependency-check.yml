@@ -26,6 +26,10 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        subproject: ["unsafe/sun-misc-unsafe"]
+    name: Check dependencies of ${{ matrix.subproject }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Set up JDK
@@ -34,6 +38,7 @@ jobs:
           distribution: temurin
           java-version: 21
       - name: Dependency Check with Maven
+        working-directory: ${{ matrix.subproject }}
         run: |
           # shellcheck disable=SC2086
           ./mvnw ${MAVEN_CLI_OPTS} dependency-check:aggregate
