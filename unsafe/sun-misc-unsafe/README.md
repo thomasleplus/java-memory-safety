@@ -20,7 +20,7 @@ This will try to write the String `foo` to an allocated memory space
 of size zero. The expected output is something like this, which shows that a
 segmentation fault (SIGSEGV) was achieved:
 
-```
+```text
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] -----------------< org.leplus.unsafe:sun-misc-unsafe >------------------
