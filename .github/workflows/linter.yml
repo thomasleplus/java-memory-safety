@@ -1,0 +1,40 @@
+---
+# This workflow executes several linters on changed files based on languages used in your code base whenever
+# you push a code or open a pull request.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/github/super-linter
+name: Lint Code Base
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  run-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          # Full git history is needed to get a proper list of changed
+          # files within `super-linter`
+          fetch-depth: 0
+      - name: Lint Code Base
+        uses: super-linter/super-linter@92e2606383320f72e6129f8a50d8537cf9c84ed6 # v6.3.1
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          LINTER_RULES_PATH: .
+          DEFAULT_BRANCH: main
+          FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/*)"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
