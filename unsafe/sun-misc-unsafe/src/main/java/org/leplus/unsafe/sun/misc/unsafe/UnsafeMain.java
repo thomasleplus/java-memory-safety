@@ -4,14 +4,16 @@ import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
 /**
- * This class is intended to demonstrate UNSAFE uses of sun.misc.Unsafe.
- * DO NOT USE THIS CODE AS AN EXAMPLE FOR ANYTHING.
- * You've been warned.
+ * This class is intended to demonstrate UNSAFE uses of sun.misc.Unsafe. DO NOT USE THIS CODE AS AN
+ * EXAMPLE FOR ANYTHING. You've been warned.
  *
  * @author Thomas Leplus
  * @since 1.0.0
  */
 public class UnsafeMain {
+
+  /** Private constructor for utility class. */
+  private UnsafeMain() {}
 
   /**
    * This is the entrypoint method to run the POC.
