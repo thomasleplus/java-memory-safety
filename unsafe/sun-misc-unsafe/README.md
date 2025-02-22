@@ -43,12 +43,18 @@ Abort trap: 6
 
 ### Checkstyle
 
+You can run it using `./mvnw checkstyle:check`.
+
 Checkstyle does complain with `Illegal import - sun.misc.Unsafe. [IllegalImport]`.
 
-### SpotBugs (including findsecbugs plugin)
+### PMD
+
+You can run it using `./mvnw pmd:check`.
 
 No finding.
 
-### PMD
+### SpotBugs (including findsecbugs plugin)
+
+You can run it using `./mvnw spotbugs:check`.
 
 No finding.
