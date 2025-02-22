@@ -60,8 +60,9 @@ jobs:
           distribution: temurin
           java-version: 21
       - name: Autobuild
-        working-directory: ${{ matrix.subproject }}
         uses: github/codeql-action/autobuild@9e8d0789d4a0fa9ceb6b1738f7e269594bdd67f0 # v3.28.9
+        with:
+          working-directory: ${{ matrix.subproject }}
 
       # ℹ️ Command-line programs to run using the OS shell.
       # 📚 https://git.io/JvXDl
