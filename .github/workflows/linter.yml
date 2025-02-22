@@ -35,7 +35,7 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVA: false
-	  VALIDATE_JSCPD: false
+          VALIDATE_JSCPD: false
           LINTER_RULES_PATH: .
           DEFAULT_BRANCH: main
           FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/*)"
