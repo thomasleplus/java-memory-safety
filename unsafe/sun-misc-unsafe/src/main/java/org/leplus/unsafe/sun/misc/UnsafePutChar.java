@@ -1,4 +1,4 @@
-package org.leplus.unsafe.sun.misc.unsafe;
+package org.leplus.unsafe.sun.misc;
 
 import java.lang.reflect.Field;
 import sun.misc.Unsafe;
@@ -10,10 +10,10 @@ import sun.misc.Unsafe;
  * @author Thomas Leplus
  * @since 1.0.0
  */
-public final class UnsafeMain {
+public final class UnsafePutChar {
 
   /** Private constructor for utility class. */
-  private UnsafeMain() {
+  private UnsafePutChar() {
     // Prevents instantiation.
   }
 
@@ -32,7 +32,9 @@ public final class UnsafeMain {
   }
 
   /**
-   * This is the method to instantiate Unsafe.
+   * This is the method to instantiate Unsafe. Recent JDK versions have the method
+   * Unsafe.getUnsafe() for this but let's implement our own just to maintain compatibility all the
+   * way back to Java 1.8.
    *
    * @return an Unsafe instance.
    */

@@ -4,4 +4,4 @@
  * @author Thomas Leplus
  * @since 1.0.0
  */
-package org.leplus.unsafe.sun.misc.unsafe;
+package org.leplus.unsafe.sun.misc;
