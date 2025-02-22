@@ -22,12 +22,12 @@ segmentation fault (SIGSEGV) was achieved:
 
 ```text
 [INFO] Scanning for projects...
-[INFO] 
+[INFO]
 [INFO] -----------------< org.leplus.unsafe:sun-misc-unsafe >------------------
 [INFO] Building sun-misc-unsafe 1.0.0-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
+[INFO]
 [INFO] --- exec:3.5.0:java (default-cli) @ sun-misc-unsafe ---
 #
 # A fatal error has been detected by the Java Runtime Environment:
@@ -38,3 +38,17 @@ segmentation fault (SIGSEGV) was achieved:
 #
 Abort trap: 6
 ```
+
+## Code scans
+
+### Checkstyle
+
+Checkstyle does complain with `Illegal import - sun.misc.Unsafe. [IllegalImport]`.
+
+### SpotBugs (including findsecbugs plugin)
+
+No finding.
+
+### PMD
+
+No finding.
