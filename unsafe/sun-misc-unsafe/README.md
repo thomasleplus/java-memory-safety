@@ -45,7 +45,11 @@ Abort trap: 6
 
 You can run it using `./mvnw checkstyle:check`.
 
-Checkstyle does complain with `Illegal import - sun.misc.Unsafe. [IllegalImport]`.
+Checkstyle reports `Illegal import - sun.misc.Unsafe. [IllegalImport]`.
+
+### CodeQL
+
+Reports `Access to unsupported JDK-internal API`.
 
 ### PMD
 
