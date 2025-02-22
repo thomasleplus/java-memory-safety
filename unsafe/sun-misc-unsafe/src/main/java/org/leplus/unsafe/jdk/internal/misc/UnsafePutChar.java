@@ -3,8 +3,8 @@ package org.leplus.unsafe.jdk.internal.misc;
 import jdk.internal.misc.Unsafe;
 
 /**
- * This class is intended to demonstrate UNSAFE uses of jdk.internal.misc.Unsafe. DO NOT USE THIS CODE AS AN
- * EXAMPLE FOR ANYTHING. You've been warned.
+ * This class is intended to demonstrate UNSAFE uses of jdk.internal.misc.Unsafe. DO NOT USE THIS
+ * CODE AS AN EXAMPLE FOR ANYTHING. You've been warned.
  *
  * @author Thomas Leplus
  * @since 1.0.0
