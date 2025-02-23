@@ -8,14 +8,14 @@ fault (SIGSEGV).
 
 ```text
 [INFO] Scanning for projects...
-[INFO] 
+[INFO]
 [INFO] ---------< org.leplus.unsafe:java-lang-foreign-memorysegment >----------
 [INFO] Building java-lang-foreign-memorysegment 1.0.0-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
+[INFO]
 [INFO] --- exec:3.5.0:java (default-cli) @ java-lang-foreign-memorysegment ---
-[WARNING] 
+[WARNING]
 java.lang.IndexOutOfBoundsException: Out of bound access on segment MemorySegment{ address: 0x600003ef7230, byteSize: 0 }; new offset = 0; new length = 3
     at jdk.internal.foreign.AbstractMemorySegmentImpl.outOfBoundException (AbstractMemorySegmentImpl.java:439)
     at jdk.internal.foreign.AbstractMemorySegmentImpl.apply (AbstractMemorySegmentImpl.java:420)
