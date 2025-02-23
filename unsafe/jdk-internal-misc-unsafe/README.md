@@ -87,11 +87,11 @@ mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePu
 
 You can run it using `./mvnw checkstyle:check`.
 
-Checkstyle reports `Illegal import - jdk.internal.misc.Unsafe. [IllegalImport]`.
+No finding.
 
 ### CodeQL
 
-Reports `Access to unsupported JDK-internal API`.
+No finding.
 
 ### PMD
 
