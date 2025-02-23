@@ -2,7 +2,8 @@
 
 ## jdk.internal.misc.Unsafe
 
-This folder contains a few examples of unsafe usages of jdk.internal.misc.Unsafe.
+This folder contains a few examples of unsafe usages of
+jdk.internal.misc.Unsafe (Java 11 or higher).
 
 ### UnsafePutAddress
 
