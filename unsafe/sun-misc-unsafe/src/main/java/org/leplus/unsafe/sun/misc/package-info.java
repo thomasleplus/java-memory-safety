@@ -1,7 +1,2 @@
-/**
- * The package for unsafe examples.
- *
- * @author Thomas Leplus
- * @since 1.0.0
- */
+/** Package org.leplus.unsafe.sun.misc. */
 package org.leplus.unsafe.sun.misc;

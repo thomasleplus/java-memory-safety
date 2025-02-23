@@ -1,7 +1,2 @@
-/**
- * The package for safe examples.
- *
- * @author Thomas Leplus
- * @since 1.0.0
- */
+/** Package org.leplus.safe.java.lang.foreign. */
 package org.leplus.safe.java.lang.foreign;
