@@ -49,6 +49,11 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build with Maven
         working-directory: ${{ matrix.subproject }}
+        if: |
+          ${{ !
+          ( matrix.subproject == 'unsafe/jdk-internal-misc-unsafe' &&  java < 11 )
+          || ( matrix.subproject == 'safe/java-lang-foreign-memorysegment' &&  java < 22 )
+          }}
         run: |
           # Forcing dependency check version to a version compatible
           # with Java 8 since version does not matter due to
