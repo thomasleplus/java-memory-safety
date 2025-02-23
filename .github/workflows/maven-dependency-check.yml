@@ -28,7 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        subproject: ["unsafe/sun-misc-unsafe"]
+        subproject:
+          [
+            "unsafe/sun-misc-unsafe",
+            "unsafe/jdk-internal-misc-unsafe",
+            "safe/java-lang-foreign-memorysegment",
+          ]
     name: Check dependencies of ${{ matrix.subproject }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1

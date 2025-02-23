@@ -37,6 +37,8 @@ proof of concept. It can also be used to benchmark the ability to
 detect memory safety issues with static application security testing
 (SAST) tools.
 
+The `safe` directory contains safer alternative implemetations.
+
 ## Results
 
 Results from this study are shared in this document and key takeaways

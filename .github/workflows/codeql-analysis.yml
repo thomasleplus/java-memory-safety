@@ -33,7 +33,12 @@ jobs:
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]
         # Learn more:
         # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
-        subproject: ["unsafe/sun-misc-unsafe"]
+        subproject:
+          [
+            "unsafe/sun-misc-unsafe",
+            "unsafe/jdk-internal-misc-unsafe",
+            "safe/java-lang-foreign-memorysegment",
+          ]
 
     name: Analyze ${{ matrix.subproject }}
 
@@ -58,7 +63,7 @@ jobs:
         uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 22
       - name: Autobuild
         uses: github/codeql-action/autobuild@9e8d0789d4a0fa9ceb6b1738f7e269594bdd67f0 # v3.28.9
         with:

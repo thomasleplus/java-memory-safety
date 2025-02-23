@@ -1,8 +1,8 @@
 # Code
 
-## sun.misc.Unsafe
+## jdk.internal.misc.Unsafe
 
-This folder contains a few examples of unsafe usages of sun.misc.Unsafe.
+This folder contains a few examples of unsafe usages of jdk.internal.misc.Unsafe.
 
 ### UnsafePutAddress
 
@@ -14,12 +14,12 @@ segmentation fault (SIGSEGV) was achieved:
 ```text
 [INFO] Scanning for projects...
 [INFO]
-[INFO] -----------------< org.leplus.unsafe:sun-misc-unsafe >------------------
-[INFO] Building sun-misc-unsafe 1.0.0-SNAPSHOT
+[INFO] -----------------< org.leplus.unsafe:jdk-internal-misc-unsafe >------------------
+[INFO] Building jdk-internal-misc-unsafe 1.0.0-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- exec:3.5.0:java (default-cli) @ sun-misc-unsafe ---
+[INFO] --- exec:3.5.0:java (default-cli) @ jdk-internal-misc-unsafe ---
 #
 # A fatal error has been detected by the Java Runtime Environment:
 #
@@ -33,13 +33,13 @@ Abort trap: 6
 You can run this example yourself using the following shell command on Mac/Linux:
 
 ```bash
-./mvnw exec:java -Dexec.mainClass=org.leplus.unsafe.sun.misc.UnsafePutAddress -Dexec.args="42"
+MAVEN_OPTS='--add-opens java.base/jdk.internal.misc=ALL-UNNAMED' ./mvnw exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutAddress -Dexec.args="42"
 ```
 
 Or this one on Windows:
 
 ```batch
-mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.sun.misc.UnsafePutAddress -Dexec.args="42"
+mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutAddress -Dexec.args="42"
 ```
 
 ### UnsafePutChar
@@ -52,12 +52,12 @@ segmentation fault (SIGSEGV) was achieved:
 ```text
 [INFO] Scanning for projects...
 [INFO]
-[INFO] -----------------< org.leplus.unsafe:sun-misc-unsafe >------------------
-[INFO] Building sun-misc-unsafe 1.0.0-SNAPSHOT
+[INFO] -----------------< org.leplus.unsafe:jdk-internal-misc-unsafe >------------------
+[INFO] Building jdk-internal-misc-unsafe 1.0.0-SNAPSHOT
 [INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- exec:3.5.0:java (default-cli) @ sun-misc-unsafe ---
+[INFO] --- exec:3.5.0:java (default-cli) @ jdk-internal-misc-unsafe ---
 #
 # A fatal error has been detected by the Java Runtime Environment:
 #
@@ -71,13 +71,13 @@ Abort trap: 6
 You can run this example yourself using the following shell command on Mac/Linux:
 
 ```bash
-./mvnw exec:java -Dexec.mainClass=org.leplus.unsafe.sun.misc.UnsafePutChar -Dexec.args="foo"
+MAVEN_OPTS='--add-opens java.base/jdk.internal.misc=ALL-UNNAMED' ./mvnw exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutChar -Dexec.args="foo"
 ```
 
 Or this one on Windows:
 
 ```batch
-mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.sun.misc.UnsafePutChar -Dexec.args="foo"
+mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutChar -Dexec.args="foo"
 ```
 
 ## Code scans
@@ -86,7 +86,7 @@ mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.sun.misc.UnsafePutChar -De
 
 You can run it using `./mvnw checkstyle:check`.
 
-Checkstyle reports `Illegal import - sun.misc.Unsafe. [IllegalImport]`.
+Checkstyle reports `Illegal import - jdk.internal.misc.Unsafe. [IllegalImport]`.
 
 ### CodeQL
 

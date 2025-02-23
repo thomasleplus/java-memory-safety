@@ -30,8 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [11, 17, 21]
-        subproject: ["unsafe/sun-misc-unsafe"]
+        java: [8, 11, 17, 21, 22]
+        subproject:
+          [
+            "unsafe/sun-misc-unsafe",
+            "unsafe/jdk-internal-misc-unsafe",
+            "safe/java-lang-foreign-memorysegment",
+          ]
     name: ${{ matrix.subproject }} - Java ${{ matrix.java }}
     steps:
       - name: Set REPOSITORY
@@ -52,11 +57,5 @@ jobs:
           # Type org.owasp.dependencycheck.maven.CheckMojo not present".
           # shellcheck disable=SC2086
           ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.version=10.0.4 -DdependencyCheck.skip=true verify
-      - name: Upload artifacts
-        if: ${{ matrix.java == 11 }}
-        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
-        with:
-          name: ${{ env.REPOSITORY }}
-          path: target/
       - name: Clean up
         run: rm "${HOME}/.m2/settings.xml"
