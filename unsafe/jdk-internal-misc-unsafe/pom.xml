@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.leplus.unsafe</groupId>
-  <artifactId>sun-misc-unsafe</artifactId>
+  <artifactId>jdk-internal-misc-unsafe</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>sun-misc-unsafe</name>
+  <name>jdk-internal-misc-unsafe</name>
   <packaging>jar</packaging>
-  <description>Unsafe usages of sun.misc.Unsafe.</description>
+  <description>Unsafe usages of jdk.internal.misc.Unsafe.</description>
   <url>https://github.com/thomasleplus/java-memory-safety</url>
   <licenses>
     <license>
@@ -61,9 +61,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <java.minVersion>10</java.minVersion>
     <dependencyCheck.version>12.0.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
@@ -86,7 +84,7 @@
                   <version>3.6.3</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>1.8</version>
+                  <version>${java.minVersion}</version>
                 </requireJavaVersion>
                 <requireOS>
                   <family>unix</family>
@@ -101,8 +99,9 @@
 	<artifactId>maven-compiler-plugin</artifactId>
 	<version>3.13.0</version>
 	<configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>${java.minVersion}</release>
+          <source>${java.minVersion}</source>
+          <target>${java.minVersion}</target>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
 	</configuration>
@@ -119,6 +118,22 @@
             </goals>
           </execution>
 	</executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <classifier>${java.version}</classifier>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
 	<groupId>org.owasp</groupId>
