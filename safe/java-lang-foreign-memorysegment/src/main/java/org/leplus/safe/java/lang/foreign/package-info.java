@@ -1,5 +1,5 @@
 /**
- * The package for utility classes.
+ * The package for safe examples.
  *
  * @author Thomas Leplus
  * @since 1.0.0

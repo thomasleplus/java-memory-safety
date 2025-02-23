@@ -99,8 +99,7 @@
 	<artifactId>maven-compiler-plugin</artifactId>
 	<version>3.13.0</version>
 	<configuration>
-          <release>${java.minVersion}</release>
-          <source>${java.minVersion}</source>
+          <source>1.8</source><!-- require to use jdk.internal in code -->
           <target>${java.minVersion}</target>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>

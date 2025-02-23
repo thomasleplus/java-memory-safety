@@ -43,6 +43,10 @@ Or this one on Windows:
 mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutAddress -Dexec.args="42"
 ```
 
+If you want to run it by a different mean, don't forget to add the
+option `--add-opens java.base/jdk.internal.misc=ALL-UNNAMED` on the
+`java` command line.
+
 ### UnsafePutChar
 
 This POC will try to write the String provided in argument to an
@@ -80,6 +84,10 @@ Or this one on Windows:
 ```batch
 mvnw.cmd exec:java -Dexec.mainClass=org.leplus.unsafe.jdk.internal.misc.UnsafePutChar -Dexec.args="foo"
 ```
+
+If you want to run it by a different mean, don't forget to add the
+option `--add-opens java.base/jdk.internal.misc=ALL-UNNAMED` on the
+`java` command line.
 
 ## Code scans
 
