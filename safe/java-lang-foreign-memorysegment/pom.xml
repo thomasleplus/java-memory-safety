@@ -140,6 +140,7 @@
         <configuration>
           <failBuildOnCVSS>${dependencyCheck.threshold}</failBuildOnCVSS>
 	  <failOnError>true</failOnError>
+	  <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
 	  <skip>${dependencyCheck.skip}</skip>
         </configuration>
         <executions>
@@ -210,7 +211,8 @@
         <artifactId>dependency-check-maven</artifactId>
         <version>${dependencyCheck.version}</version>
         <configuration>
-	        <skip>${dependencyCheck.skip}</skip>
+	  <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
+	  <skip>${dependencyCheck.skip}</skip>
         </configuration>
         <reportSets>
           <reportSet>
