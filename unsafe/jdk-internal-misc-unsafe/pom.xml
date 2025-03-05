@@ -103,6 +103,11 @@
           <target>${java.minVersion}</target>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+            <arg>-Xdoclint:all</arg>
+            <arg>-Werror</arg>
+          </compilerArgs>
 	</configuration>
       </plugin>
       <plugin>
