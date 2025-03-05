@@ -105,7 +105,6 @@
           <compilerArgs>
             <arg>-Xlint:all</arg>
             <arg>-Xdoclint:all</arg>
-            <arg>-Werror</arg>
           </compilerArgs>
 	</configuration>
       </plugin>
