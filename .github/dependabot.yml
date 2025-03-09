@@ -2,7 +2,9 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    directory: "/"
+    directories:
+      - "/unsafe/*"
+      - "/safe/*"
     schedule:
       interval: "daily"
   - package-ecosystem: "github-actions"
