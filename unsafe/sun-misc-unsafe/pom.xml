@@ -62,6 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>1.8</java.minVersion>
+    <spotbugs.version>4.9.2.0</spotbugs.version>
     <dependencyCheck.version>12.0.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
@@ -97,7 +98,7 @@
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-compiler-plugin</artifactId>
-	<version>3.13.0</version>
+	<version>3.14.0</version>
 	<configuration>
           <source>${java.minVersion}</source>
           <target>${java.minVersion}</target>
@@ -174,13 +175,13 @@
        <plugin>
 	<groupId>com.github.spotbugs</groupId>
 	<artifactId>spotbugs-maven-plugin</artifactId>
-	<version>4.9.2.0</version>
+	<version>${spotbugs.version}</version>
         <configuration>
           <plugins>
             <plugin>
               <groupId>com.h3xstream.findsecbugs</groupId>
               <artifactId>findsecbugs-plugin</artifactId>
-              <version>1.12.0</version>
+              <version>1.13.0</version>
             </plugin>
           </plugins>
         </configuration>
@@ -199,7 +200,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.9.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
