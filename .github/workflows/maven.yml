@@ -48,6 +48,16 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
+      - name: Set MAVEN_EXTRA_OPTS
+        if: matrix.java == 8
+        shell: bash
+        run: |
+          # Forcing dependency versions to a version compatible
+          # with Java 8. Dependency check version does not matter due to
+          # dependencyCheck.skip=true. But otherwise Maven initialization
+          # fails with error: "java.lang.TypeNotPresentException:
+          # Type org.owasp.dependencycheck.maven.CheckMojo not present".
+          echo 'MAVEN_EXTRA_OPTS=-Dspotbugs.version=4.8.6.6 -DdependencyCheck.version=10.0.4' >> "${GITHUB_ENV}"
       - name: Build with Maven
         working-directory: ${{ matrix.subproject }}
         if: |
@@ -55,13 +65,8 @@ jobs:
           && ( matrix.subproject != 'safe/java-lang-foreign-memorysegment' ||  matrix.java >= 22 )
         shell: bash
         run: |
-          # Forcing dependency check version to a version compatible
-          # with Java 8 since version does not matter due to
-          # dependencyCheck.skip=true. But otherwise Maven initialization
-          # fails with error: "java.lang.TypeNotPresentException:
-          # Type org.owasp.dependencycheck.maven.CheckMojo not present".
           # shellcheck disable=SC2086
-          ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.version=10.0.4 -DdependencyCheck.skip=true verify
+          ./mvnw ${MAVEN_CLI_OPTS} ${MAVEN_EXTRA_OPTS} -DdependencyCheck.skip=true verify
       - name: Set ARTIFACT_NAME
         shell: bash
         run: echo "ARTIFACT_NAME=${{ matrix.subproject }}-${{ matrix.java }}" | sed -e 's!/!-!g' >> "${GITHUB_ENV}"
