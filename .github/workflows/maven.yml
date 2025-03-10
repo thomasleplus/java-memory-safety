@@ -49,7 +49,7 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - name: Set MAVEN_EXTRA_OPTS
-        if: matrix.java != 8
+        if: matrix.java == 8
         shell: bash
         run: |
           # Forcing dependency versions to a version compatible
@@ -57,7 +57,7 @@ jobs:
           # dependencyCheck.skip=true. But otherwise Maven initialization
           # fails with error: "java.lang.TypeNotPresentException:
           # Type org.owasp.dependencycheck.maven.CheckMojo not present".
-          echo 'MAVEN_EXTRA_OPTS="-Dspotbugs.version=4.8.6.6 -DdependencyCheck.version=10.0.4"' >> "${GITHUB_ENV}"
+          echo 'MAVEN_EXTRA_OPTS=-Dspotbugs.version=4.8.6.6 -DdependencyCheck.version=10.0.4' >> "${GITHUB_ENV}"
       - name: Build with Maven
         working-directory: ${{ matrix.subproject }}
         if: |
