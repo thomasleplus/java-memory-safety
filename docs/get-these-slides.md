@@ -1,4 +1,4 @@
-### Get the slides
+### Get these slides
 
 ![QR](assets/images/slides-qrcode.png)
 
