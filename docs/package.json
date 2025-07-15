@@ -54,7 +54,7 @@
     "node-qunit-puppeteer": "2.2.0",
     "through2": "4.0.2",
     "qunit": "2.22.0",
-    "rollup": "4.1.5",
+    "rollup": "4.45.1",
     "sass": "1.79.4",
     "yargs": "17.7.2"
   },
