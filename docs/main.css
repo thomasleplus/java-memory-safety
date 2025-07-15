@@ -1,4 +1,18 @@
 @import 'dist/reset.css';
 @import 'dist/reveal.css';
-@import 'dist/theme/moon.css';
+@import 'dist/theme/sky.css';
 @import 'plugin/highlight/monokai.css';
+
+img[alt=GitHub] {
+    vertical-align: middle;
+    height: 50px;
+}
+
+img[alt=LinkedIn] {
+    vertical-align: middle;
+    height: 50px;
+}
+
+img[alt=QR] {
+    height: 200px;
+}

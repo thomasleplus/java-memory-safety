@@ -1,3 +1,5 @@
-# When Java Plays Unsafe: How a Single Mistake Can Break Memory Safety
+## When Java Plays Unsafe
 
-By Thomas Leplus
+How a Single Mistake Can Break Memory Safety
+
+by Thomas Leplus
