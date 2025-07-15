@@ -1,5 +1,5 @@
-import Reveal from 'reveal.js';
-import Markdown from 'reveal.js/plugin/markdown/markdown';
+import Reveal from './node_modules/reveal.js';
+import Markdown from './node_modules/reveal.js/plugin/markdown/markdown';
 
 Reveal.initialize({
   hash: true,
