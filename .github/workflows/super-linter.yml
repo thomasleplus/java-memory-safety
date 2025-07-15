@@ -66,5 +66,5 @@ jobs:
           VALIDATE_JSCPD: false
           LINTER_RULES_PATH: .
           DEFAULT_BRANCH: main
-          FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/*|docs/css/*|docs/dist/*|docs/js/*|docs/node_modules/*)"
+          FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/*|docs/css/*|docs/dist/*|docs/js/*|docs/node_modules/*|docs/plugin/*)"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,18 +1,18 @@
-@import 'dist/reset.css';
-@import 'dist/reveal.css';
-@import 'dist/theme/sky.css';
-@import 'plugin/highlight/monokai.css';
+@import url('dist/reset.css');
+@import url('dist/reveal.css');
+@import url('dist/theme/sky.css');
+@import url('plugin/highlight/monokai.css');
 
-img[alt=GitHub] {
+img[alt='GitHub'] {
     vertical-align: middle;
     height: 50px;
 }
 
-img[alt=LinkedIn] {
+img[alt='LinkedIn'] {
     vertical-align: middle;
     height: 50px;
 }
 
-img[alt=QR] {
+img[alt='QR'] {
     height: 200px;
 }
