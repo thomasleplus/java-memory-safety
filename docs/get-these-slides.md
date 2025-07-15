@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### Get these slides
 
 ![QR](assets/images/slides-qrcode.png)
