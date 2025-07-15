@@ -1,0 +1,9 @@
+{
+  "name": "java-memory-safety",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "dependencies": {
+    "reveal.js": "5.2.1"
+  }
+}
