@@ -7,6 +7,11 @@ updates:
       - "/safe/*"
     schedule:
       interval: "daily"
+  - package-ecosystem: "npm"
+    directories:
+      - "/docs"
+    schedule:
+      interval: "daily"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
