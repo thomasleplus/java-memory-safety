@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Rules"
+	 xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+  <description>Unsafe rules</description>
+  <rule language="java" name="DontUseUnsafe" message="Do not use sun.misc.Unsafe or jdk.internal.misc.Unsafe" class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+    <description>Do not use sun.misc.Unsafe or jdk.internal.misc.Unsafe</description>
+    <priority>1</priority>
+    <properties>
+      <property name="xpath">
+	<value>
+        <![CDATA[//ClassType[pmd-java:typeIsExactly('sun.misc.Unsafe') or pmd-java:typeIsExactly('jdk.internal.misc.Unsafe')]]]>
+	</value>
+      </property>
+    </properties>
+  </rule>
+</ruleset>
