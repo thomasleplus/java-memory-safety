@@ -24,4 +24,4 @@ Note: Forget if it's Java or not. [Step by step.] 366 longs x 8 bytes
 each (on 64-bit system) = 2,928 bytes so almost 3 kilobytes. You use
 SSL/TLS of course so if attacker lucky, maybe they get the private key
 of your certificate. If not, crash app with POST /schedule/377,
-kubernetes restarts the instance, same player shoot again!
+Kubernetes restarts the instance, same player shoot again!

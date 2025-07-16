@@ -11,5 +11,5 @@
 
 Note: My last job was AVP of Application Security in the FinTech
 division of the Nasdaq stock exchange. Our biggest application is tens
-of millions of lines of code. That's roughtly the size of a complete
+of millions of lines of code. That's roughly the size of a complete
 operating system. So believe me when I say that I have seen it ALL.

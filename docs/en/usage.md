@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### Surely, nobody would use it!
+### Surely, nobody uses it!
 
 FIXME: find some stats.
 
