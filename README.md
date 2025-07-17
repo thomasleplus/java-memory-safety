@@ -34,7 +34,7 @@ conferences. You can find the slides [here](https://thomasleplus.github.io/java-
 
 ## Code
 
-The `unsafe` directory contains various code samples that show how NOT
+The [`unsafe`](unsafe/) directory contains various code samples that show how NOT
 to write Java code. As its name indicate, the code inside this
 directory is not safe and must not be used for purpose other than
 illustrating the point of this study. All the samples can be run as a
@@ -42,7 +42,13 @@ proof of concept. It can also be used to benchmark the ability to
 detect memory safety issues with static application security testing
 (SAST) tools.
 
-The `safe` directory contains safer alternative implemetations.
+The [`safe`](safe/) directory contains safer alternative implemetations.
+
+The [`spotbugs`](spotbugs/) directory contains a SpotBugs plugin to
+detect occurrences of non memory-safe Java code.
+
+The [`reports`](reports/) directory contains some data that was
+gathered during the research needed for this project.
 
 ## Results
 
