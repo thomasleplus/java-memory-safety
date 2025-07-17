@@ -1,0 +1,593 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.9.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>target/dependency/hadoop-shaded-protobuf_3_7-1.1.1.jar</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>54096 lines of code analyzed,
+	in 586 classes, 
+	in 2 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">28</td>
+            <td align="right">0.52</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>28</b>
+            </td>
+            <td align="right">
+               <b>0.52</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">28</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>28</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateInstance(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateInstance(Class)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil.allocateInstance(Class)<br/>At UnsafeUtil.java:[line 89]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e19');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e19" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.copyMemory(long, byte[], long, long)<br/>At UnsafeUtil.java:[line 564]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.copyMemory(byte[], long, long, long)<br/>At UnsafeUtil.java:[line 569]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e49');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getBoolean(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e49" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getBoolean(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getBoolean(Object, long)<br/>At UnsafeUtil.java:[line 534]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e64');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e64" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getByte(long)<br/>At UnsafeUtil.java:[line 494]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e79');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e79" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getByte(Object, long)<br/>At UnsafeUtil.java:[line 524]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e94');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getDouble(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e94" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getDouble(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getDouble(Object, long)<br/>At UnsafeUtil.java:[line 554]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e109');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getFloat(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e109" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getFloat(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getFloat(Object, long)<br/>At UnsafeUtil.java:[line 544]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e124');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e124" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getInt(long)<br/>At UnsafeUtil.java:[line 504]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getLong(long)<br/>At UnsafeUtil.java:[line 514]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e155');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putBoolean(Object, long, boolean). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e155" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putBoolean(Object, long, boolean)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putBoolean(Object, long, boolean)<br/>At UnsafeUtil.java:[line 539]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e170');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e170" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(long, byte)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putByte(long, byte)<br/>At UnsafeUtil.java:[line 499]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e185');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e185" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putByte(Object, long, byte)<br/>At UnsafeUtil.java:[line 529]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e200');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putDouble(Object, long, double). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e200" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putDouble(Object, long, double)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putDouble(Object, long, double)<br/>At UnsafeUtil.java:[line 559]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e215');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putFloat(Object, long, float). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e215" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putFloat(Object, long, float)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putFloat(Object, long, float)<br/>At UnsafeUtil.java:[line 549]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e230" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(long, int)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putInt(long, int)<br/>At UnsafeUtil.java:[line 509]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e245');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e245" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(long, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.putLong(long, long)<br/>At UnsafeUtil.java:[line 519]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e260');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldBase(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e260" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldBase(Field)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getStaticObject(Field)<br/>At UnsafeUtil.java:[line 574]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldOffset(Field)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$JvmMemoryAccessor.getStaticObject(Field)<br/>At UnsafeUtil.java:[line 574]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e290');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e290" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.arrayBaseOffset(Class)<br/>At UnsafeUtil.java:[line 460]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.arrayIndexScale(Class)<br/>At UnsafeUtil.java:[line 464]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e321');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e321" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.getInt(Object, long)<br/>At UnsafeUtil.java:[line 424]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.getLong(Object, long)<br/>At UnsafeUtil.java:[line 432]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e351');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e351" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.getObject(Object, long)<br/>At UnsafeUtil.java:[line 452]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e366');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e366" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.objectFieldOffset(Field)<br/>At UnsafeUtil.java:[line 416]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e381');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e381" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.putInt(Object, long, int)<br/>At UnsafeUtil.java:[line 428]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e396');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e396" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.putLong(Object, long, long)<br/>At UnsafeUtil.java:[line 436]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor<br/>In method org.apache.hadoop.thirdparty.protobuf.UnsafeUtil$MemoryAccessor.putObject(Object, long, Object)<br/>At UnsafeUtil.java:[line 456]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="UNSAFE_CALL">UNSAFE_CALL: Call to Unsafe.</a>
+      </h2>
+
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+
+    </body>
+</html>

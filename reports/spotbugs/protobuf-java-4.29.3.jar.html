@@ -1,0 +1,3323 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.9.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>target/dependency/protobuf-java-4.29.3.jar</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>72335 lines of code analyzed,
+	in 738 classes, 
+	in 2 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">210</td>
+            <td align="right">2.90</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>210</b>
+            </td>
+            <td align="right">
+               <b>2.90</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">210</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>210</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1490]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e19');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e19" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1531]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1580]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e49');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e49" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1586]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e64');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e64" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1604]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e79');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e79" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.isInitialized(Object)<br/>At MessageSchema.java:[line 4495]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e94');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e94" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3982]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e109');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e109" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2113]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e124');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e124" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2154]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2166]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e155');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e155" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2197]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e170');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e170" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2203]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e185');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e185" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2209]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e200');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e200" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2221]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e215');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e215" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1519]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e230" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1525]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e245');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e245" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1610]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e260');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e260" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2142]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2148]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e290');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e290" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2160]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2215]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e321');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e321" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2227]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1555]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e351');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e351" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1566]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e366');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e366" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1573]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e381');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e381" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1619]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e396');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e396" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1626]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1631]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e426');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e426" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1636]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e441');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e441" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1641]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e456');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e456" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1646]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1651]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e487');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e487" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1656]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e502');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e502" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1661]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e517');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e517" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1665]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e532');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e532" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1670]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e547');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e547" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1675]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e562');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e562" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1680]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e577');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e577" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1685]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e592');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e592" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1690]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e607');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e607" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1695]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e622');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e622" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1700]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e637');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e637" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1705]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e653');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e653" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1711]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e668');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e668" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1727]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e683');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e683" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1743]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e698');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e698" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1759]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e713');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e713" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1775]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e728');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e728" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1791]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e743');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e743" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1807]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e758');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e758" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1823]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e773');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e773" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1839]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e788');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e788" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1855]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e803');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e803" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1871]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e819');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e819" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1887]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e834');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e834" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1903]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e849');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e849" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1919]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e864');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e864" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1935]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e879');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e879" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1942]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e894');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e894" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1986]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e909');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e909" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1996]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e924');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e924" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 2004]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e939');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e939" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 2042]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e954');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e954" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.makeImmutable(Object)<br/>At MessageSchema.java:[line 4328]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e969');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e969" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.makeImmutable(Object)<br/>At MessageSchema.java:[line 4334]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e985');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e985" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.makeImmutable(Object)<br/>At MessageSchema.java:[line 4373]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1000');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1000" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1393]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1015');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1015" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1415]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1030');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1030" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeOneofMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1432]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1045');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1045" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeOneofMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1454]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1060');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1060" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mutableMessageFieldForMerge(Object, int)<br/>At MessageSchema.java:[line 4254]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1075');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1075" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mutableOneofMessageFieldForMerge(Object, int, int)<br/>At MessageSchema.java:[line 4281]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1090');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1090" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMapField(Object, byte[], int, int, int, long, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3738]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1105');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1105" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4138]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1120');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1120" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseRepeatedField(Object, byte[], int, int, int, int, int, int, long, int, long, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3577]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1135');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1135" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2178]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1151');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1151" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2184]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1166');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1166" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2191]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1181');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1181" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2234]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1196');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1196" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2239]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1211');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1211" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2243]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1226');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1226" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2247]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1241');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1241" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2251]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1256');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1256" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2255]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1271');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1271" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2259]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1286');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1286" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2263]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1301');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1301" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2267]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1317');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1317" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2271]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1332');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1332" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2276]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1347');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1347" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2282]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1362');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1362" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2286]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1377');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1377" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2290]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1392');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1392" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2294]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1407');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1407" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2298]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1422');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1422" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2302]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1437');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1437" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2306]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1452');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1452" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2311]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1467');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1467" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2315]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1483');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1483" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2319]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1498');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1498" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2323]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1513');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1513" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2327]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1528');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1528" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2331]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1543');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1543" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2335]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1558');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1558" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2340]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1573');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1573" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2344]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1588');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1588" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2348]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1603');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1603" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2352]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1618');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1618" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2356]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1633');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1633" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2360]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1649');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1649" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2364]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1664');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1664" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2369]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1679');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1679" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2375]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1694');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1694" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2419]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1709');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1709" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2424]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1724');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1724" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2430]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1739');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1739" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.writeFieldsInAscendingOrder(Object, Writer)<br/>At MessageSchema.java:[line 2466]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1754');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1754" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.newSchemaForRawMessageInfo(RawMessageInfo, NewInstanceSchema, ListFieldSchema, UnknownFieldSchema, ExtensionSchema, MapFieldSchema)<br/>At MessageSchema.java:[line 490]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1769');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1769" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.newSchemaForRawMessageInfo(RawMessageInfo, NewInstanceSchema, ListFieldSchema, UnknownFieldSchema, ExtensionSchema, MapFieldSchema)<br/>At MessageSchema.java:[line 502]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1784');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1784" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.newSchemaForRawMessageInfo(RawMessageInfo, NewInstanceSchema, ListFieldSchema, UnknownFieldSchema, ExtensionSchema, MapFieldSchema)<br/>At MessageSchema.java:[line 528]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1799');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1799" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.newSchemaForRawMessageInfo(RawMessageInfo, NewInstanceSchema, ListFieldSchema, UnknownFieldSchema, ExtensionSchema, MapFieldSchema)<br/>At MessageSchema.java:[line 553]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1815');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1815" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1714]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1830');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1830" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1730]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1845');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1845" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1746]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1860');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1860" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1762]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1875');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1875" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1778]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1890');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1890" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1794]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1905');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1905" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1810]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1920');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1920" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1826]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1935');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1935" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1842]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1950');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1950" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1858]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1965');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1965" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1874]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1981');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1981" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1890]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1996');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1996" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1906]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2011');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2011" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.getSerializedSize(Object)<br/>At MessageSchema.java:[line 1922]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2026');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2026" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3974]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2041');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2041" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4014]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2056');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2056" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4031]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2071');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2071" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4085]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2086');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2086" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4098]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2101');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2101" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4216]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2116');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2116" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3775]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2131');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2131" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3782]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2147');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2147" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3790]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2162');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2162" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3798]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2177');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2177" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3806]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2192');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2192" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3814]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2207');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2207" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3821]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2222');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2222" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3839]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2237');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2237" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3855]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2252');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2252" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3865]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2267');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2267" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3876]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2282');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2282" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3883]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2297');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2297" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4005]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2313');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2313" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4022]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2328');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2328" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4107]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2343');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2343" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.makeImmutable(Object)<br/>At MessageSchema.java:[line 4375]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2358');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2358" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1403]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2373');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2373" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1408]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2388');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2388" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1419]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2403');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2403" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeOneofMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1442]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2418');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2418" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeOneofMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1447]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2433');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2433" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.mergeOneofMessage(Object, Object, int)<br/>At MessageSchema.java:[line 1458]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2448');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2448" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMapField(Object, byte[], int, int, int, long, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3743]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2463');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2463" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4052]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2479');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2479" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4071]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2494');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2494" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseMessage(Object, byte[], int, int, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 4144]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2509');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2509" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3773]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2524');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2524" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3780]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2539');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2539" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3789]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2554');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2554" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3797]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2569');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2569" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3804]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2584');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2584" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3812]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2599');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2599" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3820]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2614');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2614" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3829]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2629');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2629" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3836]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2645');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2645" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3854]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2660');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2660" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3864]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2675');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2675" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3875]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2690');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2690" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseOneofField(Object, byte[], int, int, int, int, int, int, int, long, int, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3882]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2705');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2705" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.parseRepeatedField(Object, byte[], int, int, int, int, int, int, long, int, long, ArrayDecoders$Registers)<br/>At MessageSchema.java:[line 3581]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2720');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2720" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.storeMessageField(Object, int, Object)<br/>At MessageSchema.java:[line 4268]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2735');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2735" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.MessageSchema<br/>In method com.google.protobuf.MessageSchema.storeOneofMessageField(Object, int, int, Object)<br/>At MessageSchema.java:[line 4295]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2750');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateInstance(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2750" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateInstance(Class)<br/>In class com.google.protobuf.UnsafeUtil<br/>In method com.google.protobuf.UnsafeUtil.allocateInstance(Class)<br/>At UnsafeUtil.java:[line 78]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2765');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2765" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.copyMemory(long, byte[], long, long)<br/>At UnsafeUtil.java:[line 718]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2780');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2780" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.copyMemory(byte[], long, long, long)<br/>At UnsafeUtil.java:[line 723]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2795');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getBoolean(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2795" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getBoolean(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getBoolean(Object, long)<br/>At UnsafeUtil.java:[line 634]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2811');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2811" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getByte(long)<br/>At UnsafeUtil.java:[line 688]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2826');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2826" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getByte(Object, long)<br/>At UnsafeUtil.java:[line 624]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2841');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getDouble(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2841" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getDouble(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getDouble(Object, long)<br/>At UnsafeUtil.java:[line 654]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2856');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getFloat(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2856" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getFloat(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getFloat(Object, long)<br/>At UnsafeUtil.java:[line 644]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2871');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2871" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getInt(long)<br/>At UnsafeUtil.java:[line 698]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2886');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2886" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getLong(long)<br/>At UnsafeUtil.java:[line 708]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2901');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putBoolean(Object, long, boolean). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2901" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putBoolean(Object, long, boolean)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putBoolean(Object, long, boolean)<br/>At UnsafeUtil.java:[line 639]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2916');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2916" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(long, byte)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putByte(long, byte)<br/>At UnsafeUtil.java:[line 693]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2931');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2931" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putByte(Object, long, byte)<br/>At UnsafeUtil.java:[line 629]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2946');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putDouble(Object, long, double). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2946" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putDouble(Object, long, double)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putDouble(Object, long, double)<br/>At UnsafeUtil.java:[line 659]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2961');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putFloat(Object, long, float). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2961" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putFloat(Object, long, float)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putFloat(Object, long, float)<br/>At UnsafeUtil.java:[line 649]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e2977');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e2977" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(long, int)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putInt(long, int)<br/>At UnsafeUtil.java:[line 703]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e2992');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e2992" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(long, long)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.putLong(long, long)<br/>At UnsafeUtil.java:[line 713]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3007');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldBase(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3007" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldBase(Field)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getStaticObject(Field)<br/>At UnsafeUtil.java:[line 595]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e3022');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e3022" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldOffset(Field)<br/>In class com.google.protobuf.UnsafeUtil$JvmMemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$JvmMemoryAccessor.getStaticObject(Field)<br/>At UnsafeUtil.java:[line 595]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3037');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3037" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.arrayBaseOffset(Class)<br/>At UnsafeUtil.java:[line 469]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e3052');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e3052" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.arrayIndexScale(Class)<br/>At UnsafeUtil.java:[line 473]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3067');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3067" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.getInt(Object, long)<br/>At UnsafeUtil.java:[line 510]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e3082');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e3082" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.getLong(Object, long)<br/>At UnsafeUtil.java:[line 518]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3097');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3097" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.getObject(Object, long)<br/>At UnsafeUtil.java:[line 538]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e3112');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e3112" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.objectFieldOffset(Field)<br/>At UnsafeUtil.java:[line 465]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3127');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3127" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.putInt(Object, long, int)<br/>At UnsafeUtil.java:[line 514]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e3143');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e3143" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.putLong(Object, long, long)<br/>At UnsafeUtil.java:[line 522]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e3158');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e3158" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.protobuf.UnsafeUtil$MemoryAccessor<br/>In method com.google.protobuf.UnsafeUtil$MemoryAccessor.putObject(Object, long, Object)<br/>At UnsafeUtil.java:[line 542]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="UNSAFE_CALL">UNSAFE_CALL: Call to Unsafe.</a>
+      </h2>
+
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+
+    </body>
+</html>

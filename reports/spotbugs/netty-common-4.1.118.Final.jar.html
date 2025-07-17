@@ -1,0 +1,1868 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.9.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>target/dependency/netty-common-4.1.118.Final.jar</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>22221 lines of code analyzed,
+	in 537 classes, 
+	in 13 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">113</td>
+            <td align="right">5.09</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>113</b>
+            </td>
+            <td align="right">
+               <b>5.09</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">113</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>113</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.addressSize(). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.addressSize()<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.addressSize()<br/>At PlatformDependent0.java:[line 1014]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e19');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e19" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 346]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.allocateDirectNoCleaner(int)<br/>At PlatformDependent0.java:[line 625]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e49');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e49" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.allocateMemory(long)<br/>At PlatformDependent0.java:[line 1018]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e64');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e64" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 376]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e79');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e79" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 377]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e94');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e94" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 379]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e109');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e109" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 297]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e124');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e124" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 378]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 380]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e155');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e155" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(long, long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.copyMemory(long, long, long)<br/>At PlatformDependent0.java:[line 801]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e170');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e170" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(long, long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.copyMemoryWithSafePointPolling(long, long, long)<br/>At PlatformDependent0.java:[line 808]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e185');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e185" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.copyMemory(Object, long, Object, long, long)<br/>At PlatformDependent0.java:[line 821]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e200');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e200" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.copyMemoryWithSafePointPolling(Object, long, Object, long, long)<br/>At PlatformDependent0.java:[line 829]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e215');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.freeMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e215" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.freeMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.&lt;static initializer for PlatformDependent0&gt;()<br/>At PlatformDependent0.java:[line 371]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.freeMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e230" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.freeMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.freeMemory(long)<br/>At PlatformDependent0.java:[line 1022]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e245');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e245" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getByte(long)<br/>At PlatformDependent0.java:[line 704]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e260');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e260" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equals(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 867]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equals(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 870]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e290');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e290" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equalsConstantTime(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 893]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getByte(byte[], int)<br/>At PlatformDependent0.java:[line 720]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e321');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e321" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getByte(byte[], long)<br/>At PlatformDependent0.java:[line 724]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.hashCodeAscii(byte[], int, int)<br/>At PlatformDependent0.java:[line 937]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e351');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getChar(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e351" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getChar(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equals(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 865]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e366');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getChar(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e366" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getChar(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equalsConstantTime(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 888]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e381');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getChar(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e381" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getChar(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.isZero(byte[], int, int)<br/>At PlatformDependent0.java:[line 918]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e396');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e396" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getInt(long)<br/>At PlatformDependent0.java:[line 712]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equals(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 859]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e426');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e426" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equalsConstantTime(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 883]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e441');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e441" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getInt(Object, long)<br/>At PlatformDependent0.java:[line 683]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e456');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e456" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getInt(byte[], int)<br/>At PlatformDependent0.java:[line 732]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getInt(int[], long)<br/>At PlatformDependent0.java:[line 736]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e487');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e487" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.hashCodeAscii(byte[], int, int)<br/>At PlatformDependent0.java:[line 947]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e502');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e502" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.isZero(byte[], int, int)<br/>At PlatformDependent0.java:[line 913]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e517');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getIntVolatile(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e517" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getIntVolatile(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getIntVolatile(long)<br/>At PlatformDependent0.java:[line 740]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e532');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e532" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getLong(long)<br/>At PlatformDependent0.java:[line 716]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e547');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e547" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equals(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 851]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e562');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e562" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.equalsConstantTime(byte[], int, byte[], int, int)<br/>At PlatformDependent0.java:[line 880]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e577');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e577" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getLong(Object, long)<br/>At PlatformDependent0.java:[line 696]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e592');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e592" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getLong(byte[], int)<br/>At PlatformDependent0.java:[line 748]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e607');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e607" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getLong(long[], long)<br/>At PlatformDependent0.java:[line 752]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e622');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e622" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.hashCodeAscii(byte[], int, int)<br/>At PlatformDependent0.java:[line 930]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e637');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e637" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.isZero(byte[], int, int)<br/>At PlatformDependent0.java:[line 906]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e653');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e653" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getObject(Object, long)<br/>At PlatformDependent0.java:[line 679]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e668');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getShort(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e668" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getShort(long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getShort(long)<br/>At PlatformDependent0.java:[line 708]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e683');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getShort(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e683" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getShort(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.getShort(byte[], int)<br/>At PlatformDependent0.java:[line 728]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e698');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getShort(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e698" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getShort(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.hashCodeAscii(byte[], int, int)<br/>At PlatformDependent0.java:[line 942]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e713');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e713" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.objectFieldOffset(Field)<br/>At PlatformDependent0.java:[line 700]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e728');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e728" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(long, byte)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putByte(long, byte)<br/>At PlatformDependent0.java:[line 756]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e743');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e743" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putByte(Object, long, byte)<br/>At PlatformDependent0.java:[line 776]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e758');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e758" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putByte(byte[], int, byte)<br/>At PlatformDependent0.java:[line 772]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e773');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e773" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(long, int)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putInt(long, int)<br/>At PlatformDependent0.java:[line 764]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e788');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e788" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putInt(byte[], int, int)<br/>At PlatformDependent0.java:[line 784]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e803');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e803" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.safeConstructPutInt(Object, long, int)<br/>At PlatformDependent0.java:[line 688]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e819');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putIntVolatile(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e819" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putIntVolatile(Object, long, int)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.safeConstructPutInt(Object, long, int)<br/>At PlatformDependent0.java:[line 691]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e834');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e834" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putLong(long, long)<br/>At PlatformDependent0.java:[line 768]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e849');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e849" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putLong(byte[], int, long)<br/>At PlatformDependent0.java:[line 788]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e864');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e864" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putObject(Object, long, Object)<br/>At PlatformDependent0.java:[line 792]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e879');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e879" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedInt(Object, long, int)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putIntOrdered(long, int)<br/>At PlatformDependent0.java:[line 744]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e894');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putShort(long, short). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e894" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putShort(long, short)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putShort(long, short)<br/>At PlatformDependent0.java:[line 760]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e909');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putShort(Object, long, short). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e909" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putShort(Object, long, short)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.putShort(byte[], int, short)<br/>At PlatformDependent0.java:[line 780]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e924');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.reallocateMemory(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e924" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.reallocateMemory(long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.reallocateDirectNoCleaner(ByteBuffer, int)<br/>At PlatformDependent0.java:[line 618]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e939');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.reallocateMemory(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e939" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.reallocateMemory(long, long)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.reallocateMemory(long, long)<br/>At PlatformDependent0.java:[line 1026]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e954');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.setMemory(long, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e954" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.setMemory(long, long, byte)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.setMemory(long, long, byte)<br/>At PlatformDependent0.java:[line 837]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e969');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.setMemory(Object, long, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e969" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.setMemory(Object, long, long, byte)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.setMemory(Object, long, long, byte)<br/>At PlatformDependent0.java:[line 841]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e985');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.storeFence(). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e985" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.storeFence()<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.safeConstructPutInt(Object, long, int)<br/>At PlatformDependent0.java:[line 689]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1000');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.throwException(Throwable). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1000" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.throwException(Throwable)<br/>In class io.netty.util.internal.PlatformDependent0<br/>In method io.netty.util.internal.PlatformDependent0.throwException(Throwable)<br/>At PlatformDependent0.java:[line 610]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1015');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.allocateMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1015" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.allocateMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0$2<br/>In method io.netty.util.internal.PlatformDependent0$2.run()<br/>At PlatformDependent0.java:[line 187]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1030');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.freeMemory(long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1030" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.freeMemory(long)<br/>In class io.netty.util.internal.PlatformDependent0$2<br/>In method io.netty.util.internal.PlatformDependent0$2.run()<br/>At PlatformDependent0.java:[line 189]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1045');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1045" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(long, long)<br/>In class io.netty.util.internal.PlatformDependent0$2<br/>In method io.netty.util.internal.PlatformDependent0$2.run()<br/>At PlatformDependent0.java:[line 188]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1060');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1060" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0$4<br/>In method io.netty.util.internal.PlatformDependent0$4.run()<br/>At PlatformDependent0.java:[line 261]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1075');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1075" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class io.netty.util.internal.PlatformDependent0$4<br/>In method io.netty.util.internal.PlatformDependent0$4.run()<br/>At PlatformDependent0.java:[line 260]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1090');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getBoolean(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1090" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getBoolean(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 412]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1105');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1105" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 401]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1120');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldBase(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1120" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldBase(Field)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 400]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1135');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldBase(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1135" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldBase(Field)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 411]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1151');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1151" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldOffset(Field)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 399]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1166');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.staticFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1166" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.staticFieldOffset(Field)<br/>In class io.netty.util.internal.PlatformDependent0$6<br/>In method io.netty.util.internal.PlatformDependent0$6.run()<br/>At PlatformDependent0.java:[line 410]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1181');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObjectVolatile(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1181" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObjectVolatile(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueConsumerNodeRef<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueConsumerNodeRef.lvConsumerNode()<br/>At BaseLinkedQueue.java:[line 112]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1196');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1196" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef.casProducerNode(LinkedQueueNode, LinkedQueueNode)<br/>At BaseLinkedQueue.java:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1211');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1211" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef.spProducerNode(LinkedQueueNode)<br/>At BaseLinkedQueue.java:[line 53]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1226');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1226" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef.soProducerNode(LinkedQueueNode)<br/>At BaseLinkedQueue.java:[line 58]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1241');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1241" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields.casProducerLimit(long, long)<br/>At BaseMpscLinkedArrayQueue.java:[line 158]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1256');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1256" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields.soProducerLimit(long)<br/>At BaseMpscLinkedArrayQueue.java:[line 163]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1271');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1271" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields.lpConsumerIndex()<br/>At BaseMpscLinkedArrayQueue.java:[line 113]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1286');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1286" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields.soConsumerIndex(long)<br/>At BaseMpscLinkedArrayQueue.java:[line 118]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1301');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1301" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields.casProducerIndex(long, long)<br/>At BaseMpscLinkedArrayQueue.java:[line 72]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1317');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1317" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields<br/>In method io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields.soProducerIndex(long)<br/>At BaseMpscLinkedArrayQueue.java:[line 67]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1332');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1332" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode<br/>In method io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode.spNext(LinkedQueueNode)<br/>At LinkedQueueNode.java:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1347');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1347" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode<br/>In method io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode.soNext(LinkedQueueNode)<br/>At LinkedQueueNode.java:[line 63]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1362');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1362" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpmcArrayQueueConsumerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpmcArrayQueueConsumerIndexField.casConsumerIndex(long, long)<br/>At MpmcArrayQueue.java:[line 117]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1377');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1377" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpmcArrayQueueProducerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpmcArrayQueueProducerIndexField.casProducerIndex(long, long)<br/>At MpmcArrayQueue.java:[line 68]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1392');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1392" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField.lpConsumerIndex()<br/>At MpscArrayQueue.java:[line 164]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1407');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1407" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField.soConsumerIndex(long)<br/>At MpscArrayQueue.java:[line 169]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1422');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1422" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField.casProducerIndex(long, long)<br/>At MpscArrayQueue.java:[line 65]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1437');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1437" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField.soProducerLimit(long)<br/>At MpscArrayQueue.java:[line 115]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1452');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1452" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField.lpConsumerIndex()<br/>At MpscUnpaddedArrayQueue.java:[line 123]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1467');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1467" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField.soConsumerIndex(long)<br/>At MpscUnpaddedArrayQueue.java:[line 127]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1483');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1483" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerIndexField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerIndexField.casProducerIndex(long, long)<br/>At MpscUnpaddedArrayQueue.java:[line 52]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1498');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1498" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerLimitField<br/>In method io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerLimitField.soProducerLimit(long)<br/>At MpscUnpaddedArrayQueue.java:[line 88]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1513');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1513" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess.fieldOffset(Class, String)<br/>At UnsafeAccess.java:[line 107]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1528');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1528" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.&lt;static initializer for UnsafeLongArrayAccess&gt;()<br/>At UnsafeLongArrayAccess.java:[line 35]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1543');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1543" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.&lt;static initializer for UnsafeLongArrayAccess&gt;()<br/>At UnsafeLongArrayAccess.java:[line 26]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1558');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1558" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.lpLongElement(long[], long)<br/>At UnsafeLongArrayAccess.java:[line 71]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1573');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLongVolatile(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1573" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLongVolatile(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.lvLongElement(long[], long)<br/>At UnsafeLongArrayAccess.java:[line 83]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1588');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1588" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.spLongElement(long[], long, long)<br/>At UnsafeLongArrayAccess.java:[line 47]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1603');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1603" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedLong(Object, long, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeLongArrayAccess.soLongElement(long[], long, long)<br/>At UnsafeLongArrayAccess.java:[line 59]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1618');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1618" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.&lt;static initializer for UnsafeRefArrayAccess&gt;()<br/>At UnsafeRefArrayAccess.java:[line 39]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1633');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1633" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.&lt;static initializer for UnsafeRefArrayAccess&gt;()<br/>At UnsafeRefArrayAccess.java:[line 26]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1649');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObject(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1649" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObject(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.lpRefElement(Object[], long)<br/>At UnsafeRefArrayAccess.java:[line 76]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1664');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getObjectVolatile(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1664" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getObjectVolatile(Object, long)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.lvRefElement(Object[], long)<br/>At UnsafeRefArrayAccess.java:[line 89]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1679');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1679" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.spRefElement(Object[], long, Object)<br/>At UnsafeRefArrayAccess.java:[line 51]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1694');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putOrderedObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1694" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putOrderedObject(Object, long, Object)<br/>In class io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess<br/>In method io.netty.util.internal.shaded.org.jctools.util.UnsafeRefArrayAccess.soRefElement(Object[], long, Object)<br/>At UnsafeRefArrayAccess.java:[line 63]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="UNSAFE_CALL">UNSAFE_CALL: Call to Unsafe.</a>
+      </h2>
+
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+
+    </body>
+</html>

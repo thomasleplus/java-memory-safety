@@ -1,0 +1,1223 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.9.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>target/dependency/snappy-java-1.1.8.2.jar</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>2461 lines of code analyzed,
+	in 45 classes, 
+	in 4 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">70</td>
+            <td align="right">28.44</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>70</b>
+            </td>
+            <td align="right">
+               <b>28.44</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">70</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>70</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.compress(Object, long, long, Object, long, long, short[])<br/>At SnappyRawCompressor.java:[line 247]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e19');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e19" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.count(Object, long, long, long)<br/>At SnappyRawCompressor.java:[line 281]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.compress(Object, long, long, Object, long, long, short[])<br/>At SnappyRawCompressor.java:[line 163]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e49');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e49" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.compress(Object, long, long, Object, long, long, short[])<br/>At SnappyRawCompressor.java:[line 176]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e64');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e64" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.compress(Object, long, long, Object, long, long, short[])<br/>At SnappyRawCompressor.java:[line 239]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e79');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e79" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.count(Object, long, long, long)<br/>At SnappyRawCompressor.java:[line 271]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e94');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e94" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.compress(Object, long, long, Object, long, long, short[])<br/>At SnappyRawCompressor.java:[line 226]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e109');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e109" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.count(Object, long, long, long)<br/>At SnappyRawCompressor.java:[line 261]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e124');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e124" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.fastCopy(Object, long, Object, long, int)<br/>At SnappyRawCompressor.java:[line 324]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getShort(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getShort(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.count(Object, long, long, long)<br/>At SnappyRawCompressor.java:[line 276]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e155');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e155" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 338]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e170');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e170" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 347]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e185');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e185" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 356]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e200');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e200" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 357]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e215');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e215" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 360]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e230" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 293]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e245');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e245" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 298]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e260');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e260" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 302]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 306]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e290');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e290" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 310]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 405]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e321');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e321" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 408]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 409]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e351');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e351" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 412]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e366');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e366" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 413]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e381');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e381" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 414]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e396');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e396" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 417]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 418]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e426');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e426" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 419]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e441');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e441" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 420]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e456');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e456" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 423]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 424]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e487');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e487" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 425]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e502');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e502" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 426]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e517');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e517" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.writeUncompressedLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 427]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e532');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e532" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitLiteralLength(Object, long, int)<br/>At SnappyRawCompressor.java:[line 314]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e547');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e547" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.fastCopy(Object, long, Object, long, int)<br/>At SnappyRawCompressor.java:[line 324]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e562');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putShort(Object, long, short). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e562" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putShort(Object, long, short)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 339]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e577');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putShort(Object, long, short). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e577" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putShort(Object, long, short)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 348]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e592');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putShort(Object, long, short). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e592" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putShort(Object, long, short)<br/>In class org.xerial.snappy.pure.SnappyRawCompressor<br/>In method org.xerial.snappy.pure.SnappyRawCompressor.emitCopy(Object, long, long, long, int)<br/>At SnappyRawCompressor.java:[line 361]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e607');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.copyMemory(Object, long, Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e607" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.copyMemory(Object, long, Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 139]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e622');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e622" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.getUnsignedByteSafe(Object, long, long)<br/>At SnappyRawDecompressor.java:[line 323]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e637');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e637" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 95]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e653');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e653" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 109]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e668');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e668" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 111]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e683');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e683" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 113]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e698');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e698" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 115]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e713');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e713" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 171]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e728');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e728" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 181]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e743');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e743" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 182]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e758');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e758" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 183]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e773');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e773" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 184]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e788');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getByte(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e788" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getByte(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 210]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e803');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e803" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 101]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e819');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getInt(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e819" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getInt(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 188]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e834');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e834" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 146]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e849');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e849" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 193]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e864');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e864" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 204]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e879');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e879" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 215]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e894');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e894" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 171]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e909');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e909" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 181]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e924');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e924" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 182]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e939');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e939" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 183]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e954');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e954" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 184]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e969');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putByte(Object, long, byte). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e969" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putByte(Object, long, byte)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 210]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e985');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putInt(Object, long, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e985" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putInt(Object, long, int)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 188]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1000');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1000" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 146]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1015');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1015" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 193]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e1030');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e1030" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 204]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e1045');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e1045" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class org.xerial.snappy.pure.SnappyRawDecompressor<br/>In method org.xerial.snappy.pure.SnappyRawDecompressor.uncompressAll(Object, long, long, Object, long, long)<br/>At SnappyRawDecompressor.java:[line 215]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="UNSAFE_CALL">UNSAFE_CALL: Call to Unsafe.</a>
+      </h2>
+
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+
+    </body>
+</html>

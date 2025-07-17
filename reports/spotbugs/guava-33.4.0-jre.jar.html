@@ -1,0 +1,683 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		</p>
+      <p>SpotBugs version: 4.9.3</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>target/dependency/guava-33.4.0-jre.jar</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>63157 lines of code analyzed,
+	in 2018 classes, 
+	in 18 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">34</td>
+            <td align="right">0.54</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right"/>
+            <td align="right">0.00</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>34</b>
+            </td>
+            <td align="right">
+               <b>0.54</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_SECURITY">Security Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_SECURITY">Security Warnings</a>
+            </td>
+            <td align="right">34</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>34</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_SECURITY">Security Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e4');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapInt(Object, long, int, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e4" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapInt(Object, long, int, int)<br/>In class com.google.common.cache.Striped64<br/>In method com.google.common.cache.Striped64.casBusy()<br/>At Striped64.java:[line 166]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e19');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e19" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class com.google.common.cache.Striped64<br/>In method com.google.common.cache.Striped64.casBase(long, long)<br/>At Striped64.java:[line 161]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e34');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e34" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.cache.Striped64<br/>In method com.google.common.cache.Striped64.&lt;static initializer for Striped64&gt;()<br/>At Striped64.java:[line 283]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e49');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e49" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.cache.Striped64<br/>In method com.google.common.cache.Striped64.&lt;static initializer for Striped64&gt;()<br/>At Striped64.java:[line 284]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e64');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e64" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class com.google.common.cache.Striped64$Cell<br/>In method com.google.common.cache.Striped64$Cell.cas(long, long)<br/>At Striped64.java:[line 113]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e79');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e79" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.cache.Striped64$Cell<br/>In method com.google.common.cache.Striped64$Cell.&lt;static initializer for Cell&gt;()<br/>At Striped64.java:[line 124]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e94');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e94" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray.&lt;static initializer for UnsafeByteArray&gt;()<br/>At LittleEndianByteArray.java:[line 202]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e109');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e109" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray.&lt;static initializer for UnsafeByteArray&gt;()<br/>At LittleEndianByteArray.java:[line 205]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e124');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e124" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$1<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$1.getLongLittleEndian(byte[], int)<br/>At LittleEndianByteArray.java:[line 139]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e139');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e139" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$1<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$1.putLongLittleEndian(byte[], int, long)<br/>At LittleEndianByteArray.java:[line 144]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e155');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e155" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$2<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$2.getLongLittleEndian(byte[], int)<br/>At LittleEndianByteArray.java:[line 150]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e170');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putLong(Object, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e170" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putLong(Object, long, long)<br/>In class com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$2<br/>In method com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$2.putLongLittleEndian(byte[], int, long)<br/>At LittleEndianByteArray.java:[line 159]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e185');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapInt(Object, long, int, int). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e185" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapInt(Object, long, int, int)<br/>In class com.google.common.hash.Striped64<br/>In method com.google.common.hash.Striped64.casBusy()<br/>At Striped64.java:[line 166]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e200');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e200" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class com.google.common.hash.Striped64<br/>In method com.google.common.hash.Striped64.casBase(long, long)<br/>At Striped64.java:[line 161]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e215');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e215" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.hash.Striped64<br/>In method com.google.common.hash.Striped64.&lt;static initializer for Striped64&gt;()<br/>At Striped64.java:[line 283]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e230');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e230" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.hash.Striped64<br/>In method com.google.common.hash.Striped64.&lt;static initializer for Striped64&gt;()<br/>At Striped64.java:[line 284]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e245');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e245" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapLong(Object, long, long, long)<br/>In class com.google.common.hash.Striped64$Cell<br/>In method com.google.common.hash.Striped64$Cell.cas(long, long)<br/>At Striped64.java:[line 113]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e260');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e260" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.hash.Striped64$Cell<br/>In method com.google.common.hash.Striped64$Cell.&lt;static initializer for Cell&gt;()<br/>At Striped64.java:[line 124]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e275');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayBaseOffset(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e275" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayBaseOffset(Class)<br/>In class com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator<br/>In method com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator.&lt;static initializer for UnsafeComparator&gt;()<br/>At UnsignedBytes.java:[line 322]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e290');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.arrayIndexScale(Class). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e290" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.arrayIndexScale(Class)<br/>In class com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator<br/>In method com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator.&lt;static initializer for UnsafeComparator&gt;()<br/>At UnsignedBytes.java:[line 330]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e305');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e305" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator<br/>In method com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator.compare(byte[], byte[])<br/>At UnsignedBytes.java:[line 382]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e321');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getLong(Object, long). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e321" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getLong(Object, long)<br/>In class com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator<br/>In method com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator.compare(byte[], byte[])<br/>At UnsignedBytes.java:[line 383]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e336');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e336" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casListeners(AbstractFuture, AbstractFuture$Listener, AbstractFuture$Listener)<br/>At AbstractFuture.java:[line 1419]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e351');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e351" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casValue(AbstractFuture, Object, Object)<br/>At AbstractFuture.java:[line 1434]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e366');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e366" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.compareAndSwapObject(Object, long, Object, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casWaiters(AbstractFuture, AbstractFuture$Waiter, AbstractFuture$Waiter)<br/>At AbstractFuture.java:[line 1414]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e381');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getAndSetObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e381" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getAndSetObject(Object, long, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.gasListeners(AbstractFuture, AbstractFuture$Listener)<br/>At AbstractFuture.java:[line 1424]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e396');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.getAndSetObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e396" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.getAndSetObject(Object, long, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.gasWaiters(AbstractFuture, AbstractFuture$Waiter)<br/>At AbstractFuture.java:[line 1429]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e411');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e411" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.&lt;static initializer for UnsafeAtomicHelper&gt;()<br/>At AbstractFuture.java:[line 1390]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e426');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e426" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.&lt;static initializer for UnsafeAtomicHelper&gt;()<br/>At AbstractFuture.java:[line 1391]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e441');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e441" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.&lt;static initializer for UnsafeAtomicHelper&gt;()<br/>At AbstractFuture.java:[line 1392]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e456');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e456" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.&lt;static initializer for UnsafeAtomicHelper&gt;()<br/>At AbstractFuture.java:[line 1393]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e471');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.objectFieldOffset(Field). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e471" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.objectFieldOffset(Field)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.&lt;static initializer for UnsafeAtomicHelper&gt;()<br/>At AbstractFuture.java:[line 1394]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d1e487');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d1e487" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.putNext(AbstractFuture$Waiter, AbstractFuture$Waiter)<br/>At AbstractFuture.java:[line 1408]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d1e502');">
+            <td>
+               <span class="priority-1">UNSF</span>
+            </td>
+            <td>Do not use sun.misc.Unsafe.putObject(Object, long, Object). As the class name indicates, its methods are not safe to use.
+    </td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d1e502" style="display: none;">
+                  <a href="#UNSAFE_CALL">Bug type UNSAFE_CALL (click for details)</a>
+                  <br/>Called method sun.misc.Unsafe.putObject(Object, long, Object)<br/>In class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper<br/>In method com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.putThread(AbstractFuture$Waiter, Thread)<br/>At AbstractFuture.java:[line 1403]</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="UNSAFE_CALL">UNSAFE_CALL: Call to Unsafe.</a>
+      </h2>
+
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+
+    </body>
+</html>
