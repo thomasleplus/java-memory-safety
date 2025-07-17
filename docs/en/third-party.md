@@ -3,6 +3,7 @@
 ### What about third-parties?
 
 16 out of 324 popular libraries (5%), including:
+
 - org.springframework:**spring-core**:6.2.6
 - io.netty:**netty-common**:4.1.118.Final
 - com.google.guava:**guava**:33.4.0-jre
@@ -15,4 +16,4 @@
 
 Note: I mean the class is named "Unsafe" after all! [Go over the
 list.] Took Maven Central statistics and used the SpotBugs plugin that
-I created (you can find it in the GitHub repo).
+I created (you can find it in the GitHub repository).

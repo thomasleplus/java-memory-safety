@@ -1,7 +1,7 @@
 ### Java Native Interface
 
 - Allows to invoke non-Java applications. If they are
-not memory-safe, all bets are off.
+  not memory-safe, all bets are off.
 
 - Not much that can be done there except detect and review.
 

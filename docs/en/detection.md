@@ -3,7 +3,7 @@
 ### How can I tell?
 
 |            | `s.m.Unsafe` | `j.i.m.Unsafe` |
-|------------|--------------|----------------|
+| ---------- | ------------ | -------------- |
 | SpotBugs   | FIXME: TBD   | FIXME: TBD     |
 | PMD        | FIXME: TBD   | FIXME: TBD     |
 | CheckStyle | &#x2705;     | &#x1F527;      |

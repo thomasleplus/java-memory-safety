@@ -5,7 +5,7 @@
 - Compilation
   - `-Xlint:restricted` causes warnings if unsafe FFM methods (@Restricted) are called in source code.
 - Runtime
-  - `-Xcheck:jni` causes the JVM to do additional validation on the arguments passed to JNI functions. 
+  - `-Xcheck:jni` causes the JVM to do additional validation on the arguments passed to JNI functions.
   - `-verbose:jni` enables logging of JNI.
 
 FIXME performance impacts?
