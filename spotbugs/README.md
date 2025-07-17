@@ -12,5 +12,5 @@ To build it, run the following command:
 To use it, run the following command:
 
 ```bash
-java -jar "${SPOTBUGS_HOME}/lib/spotbugs.jar" -c unsafe_checks.xml target.jar
+"${SPOTBUGS_HOME}/spotbugs2" -textui -include unsafe-bug-filter.xml target.jar
 ```
