@@ -26,7 +26,7 @@ env:
     -DdeployAtEnd=true
 
 jobs:
-  build:
+  build_samples:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -77,6 +77,35 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ matrix.subproject }}/target/
+      - name: Clean up
+        shell: bash
+        run: rm "${HOME}/.m2/settings.xml"
+  build_plugins:
+    runs-on: ubuntu-latest
+    name: Build Plugins
+    steps:
+      - name: Set REPOSITORY
+        shell: bash
+        run: echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Set SOURCE_DATE_EPOCH
+        run: echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> "${GITHUB_ENV}"
+      - name: Set up JDK 11
+        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: Build with Maven
+        working-directory: spotbugs
+        shell: bash
+        run: |
+          # shellcheck disable=SC2086
+          ./mvnw ${MAVEN_CLI_OPTS} verify
+      - name: Upload artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: unsafe-plugin
+          path: spotbugs/target/
       - name: Clean up
         shell: bash
         run: rm "${HOME}/.m2/settings.xml"

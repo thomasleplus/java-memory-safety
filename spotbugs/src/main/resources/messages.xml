@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+
+  <Plugin>
+    <ShortDescription>Unsafe SpotBugs Plugin</ShortDescription>
+    <Details>This plugin provides a detector for calls to Unsafe.</Details>
+  </Plugin>
+
+  <Detector class="org.leplus.spotbugs.UnsafeDetector">
+    <Details>
+      Detector to detect UNSAFE_CALL bug pattern.
+    </Details>
+  </Detector>
+
+  <BugPattern type="UNSAFE_CALL">
+    <ShortDescription>Call to Unsafe.</ShortDescription>
+    <LongDescription>
+      Do not use either sun.misc.Unsafe or
+      jdk.internal.misc.Unsafe. As there class name indicates, these
+      methods are not safe to use.
+    </LongDescription>
+    <Details>
+<![CDATA[
+<p>Do not use either sun.misc.Unsafe or jdk.internal.misc.Unsafe. As there class name indicates, these methods are not safe to use.</p>
+]]>
+    </Details>
+  </BugPattern>
+
+  <BugCode abbrev="UNSF">Unsafe call</BugCode>
+</MessageCollection>
