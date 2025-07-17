@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD041 -->
+
 ### Java Native Interface
 
 - Allows to invoke non-Java applications. If they are

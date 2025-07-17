@@ -5,6 +5,7 @@ This directory contains a
 detect usages of `sun.misc.Unsafe` or `jdk.internal.misc.Unsafe`.
 
 To build it, run the following command:
+
 ```bash
 ./mvnw verify
 ```
