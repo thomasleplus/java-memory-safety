@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### Surely, nobody uses it!
+### Surely nobody uses it, right?
 
 - GitHub code search:
   - `import sun.misc.Unsafe;` = 30k
