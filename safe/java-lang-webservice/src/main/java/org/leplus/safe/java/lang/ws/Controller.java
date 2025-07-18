@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class Controller {
 
-  private static final long[] schedule = new long[366];
+  private final long[] schedule = new long[366];
 
   @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
   public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id) {

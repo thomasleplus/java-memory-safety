@@ -3,7 +3,7 @@
 ### Example
 
 ```java
-private static final long[] schedule = new long[366];
+private final long[] schedule = new long[366];
 
 @POST("/schedule/{day}")
 void setEmployeeIdForDay(@Path int day, @Body long id) {
