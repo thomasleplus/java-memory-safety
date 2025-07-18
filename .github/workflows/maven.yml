@@ -33,9 +33,11 @@ jobs:
         java: [8, 11, 17, 21, 24]
         subproject:
           [
-            "unsafe/sun-misc-unsafe",
-            "unsafe/jdk-internal-misc-unsafe",
             "safe/java-lang-foreign-memorysegment",
+            "safe/java-lang-webservice",
+            "unsafe/jdk-internal-misc-unsafe",
+            "unsafe/sun-misc-unsafe",
+            "unsafe/sun-misc-unsafe-webservice",
           ]
     name: ${{ matrix.subproject }} - Java ${{ matrix.java }}
     steps:
