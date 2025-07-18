@@ -30,7 +30,7 @@ public class Controller {
   public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
-      getUnsafe().putLong(address + day * Long.BYTES, id);
+      getUnsafe().putLong(address + (long) day * (long) Long.BYTES, id);
     }
   }
 
@@ -38,7 +38,7 @@ public class Controller {
   public long getEmployeeIdForDay(@PathVariable int day)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
-      return getUnsafe().getLong(address + day * Long.BYTES);
+      return getUnsafe().getLong(address + (long) day * (long) Long.BYTES);
     }
   }
 }
