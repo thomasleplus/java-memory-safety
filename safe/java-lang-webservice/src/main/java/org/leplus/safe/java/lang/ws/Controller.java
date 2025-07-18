@@ -1,7 +1,7 @@
 package org.leplus.safe.java.lang.ws;
 
-import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
