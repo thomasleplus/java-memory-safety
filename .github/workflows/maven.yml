@@ -67,6 +67,8 @@ jobs:
         if: |
           ( matrix.subproject != 'unsafe/jdk-internal-misc-unsafe' ||  matrix.java >= 11 )
           && ( matrix.subproject != 'safe/java-lang-foreign-memorysegment' ||  matrix.java >= 22 )
+          && ( matrix.subproject != 'unsafe/sun-misc-unsafe-webservice' ||  matrix.java >= 17 )
+          && ( matrix.subproject != 'safe/java-lang-webservice' ||  matrix.java >= 17 )
         shell: bash
         run: |
           # shellcheck disable=SC2086
