@@ -1,7 +1,7 @@
 package org.leplus.unsafe.sun.misc.ws;
 
-import java.lang.reflect.Field;
 import jakarta.annotation.PostConstruct;
+import java.lang.reflect.Field;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import sun.misc.Unsafe;
@@ -27,14 +27,16 @@ public class Controller {
   }
 
   @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id) throws NoSuchFieldException, IllegalAccessException {
+  public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id)
+      throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
       getUnsafe().putLong(address + day, id);
     }
   }
 
   @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public long getEmployeeIdForDay(@PathVariable int day) throws NoSuchFieldException, IllegalAccessException {
+  public long getEmployeeIdForDay(@PathVariable int day)
+      throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
       return getUnsafe().getLong(address + day);
     }
