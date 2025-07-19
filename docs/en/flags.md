@@ -8,6 +8,6 @@
   - `-Xcheck:jni` causes the JVM to do additional validation on the arguments passed to JNI functions.
   - `-verbose:jni` enables logging of JNI.
 
-FIXME performance impacts?
+FIXME TODO performance impacts?
 
 Note: FIXME
