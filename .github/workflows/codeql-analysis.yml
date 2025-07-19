@@ -37,6 +37,7 @@ jobs:
           [
             "safe/java-lang-foreign-memorysegment",
             "safe/java-lang-webservice",
+            "safe/java-lang-foreign-webservice",
             "unsafe/jdk-internal-misc-unsafe",
             "unsafe/sun-misc-unsafe",
             "unsafe/sun-misc-unsafe-webservice",
