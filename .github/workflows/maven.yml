@@ -35,7 +35,7 @@ jobs:
           [
             "safe/java-lang-foreign-memorysegment",
             "safe/java-lang-webservice",
-            "unsafe/java-lang-foreign-webservice",
+            "safe/java-lang-foreign-webservice",
             "unsafe/jdk-internal-misc-unsafe",
             "unsafe/sun-misc-unsafe",
             "unsafe/sun-misc-unsafe-webservice",
@@ -68,7 +68,7 @@ jobs:
         if: |
           ( matrix.subproject == 'safe/java-lang-foreign-memorysegment' && matrix.java >= 22 )
           || ( matrix.subproject == 'safe/java-lang-webservice' && matrix.java >= 17 )
-          || ( matrix.subproject == 'unsafe/java-lang-foreign-webservice' && matrix.java >= 22 )
+          || ( matrix.subproject == 'safe/java-lang-foreign-webservice' && matrix.java >= 22 )
           || ( matrix.subproject == 'unsafe/jdk-internal-misc-unsafe' && matrix.java >= 11 )
           || ( matrix.subproject == 'unsafe/sun-misc-unsafe' && matrix.java >= 8 )
           || ( matrix.subproject == 'unsafe/sun-misc-unsafe-webservice' && matrix.java >= 17 )
