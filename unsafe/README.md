@@ -14,9 +14,3 @@ This folder contains the same unsafe examples using `jdk.internal.misc.Unsafe`.
 
 This folder contains an example of a Spring Boot webservice with unsafe
 usages of `sun.misc.Unsafe`. Convenient for demos.
-
-## java-lang-foreign-webservice
-
-This folder contains an example of a Spring Boot webservice with unsafe
-usages of FFM APIs but it's somewhat safer than the `sun.misc.Unsafe`
-example.

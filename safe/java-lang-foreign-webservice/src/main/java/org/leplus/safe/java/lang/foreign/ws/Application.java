@@ -1,4 +1,4 @@
-package org.leplus.safe.java.lang.ws;
+package org.leplus.safe.java.lang.foreign.ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

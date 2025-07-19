@@ -1,4 +1,4 @@
-package org.leplus.unsafe.java.lang.foreign.ws;
+package org.leplus.safe.java.lang.foreign.ws;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
