@@ -2,6 +2,6 @@
 
 ### What happens if you misuse FFM?
 
-FIXME: demo
+FIXME: same demo as before but this time exploit blocked by bound checks.
 
 Note: FIXME
