@@ -44,6 +44,10 @@ detect memory safety issues with static application security testing
 
 The [`safe`](safe/) directory contains safer alternative implemetations.
 
+The [`exploit`](exploit/) directory contains scripts to automate the
+exploitation of the unsafe implementations above. The same code can be
+used against the safe implementations for comparison.
+
 The [`spotbugs`](spotbugs/) directory contains a SpotBugs plugin to
 detect occurrences of non memory-safe Java code.
 
