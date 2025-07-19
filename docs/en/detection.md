@@ -15,5 +15,6 @@ Request it &#x1F91E; or write your own &#x1F4AA;.
 
 Note: PMD, heckstyle, SonarCloud and CodeQL have rules for
 `sun.*`. Checkstyle's rule can be configured to add more
-packages. Commercial scanner are similar. Even a simple `grep` of your
-code should do it.
+packages. Ironically it's the only one that doesn't claim to be a
+security tool. Commercial scanner are similar. Even a simple `grep` of
+your code should do it.
