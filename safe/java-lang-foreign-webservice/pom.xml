@@ -142,9 +142,9 @@
             <arg>-Xlint:all</arg>
             <arg>-Xdoclint:all</arg>
           </compilerArgs>
-      <source>20</source>
-      <target>20</target>
-    </configuration>
+	  <source>${java.minVersion}</source>
+	  <target>${java.minVersion}</target>
+	</configuration>
       </plugin>
       <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
