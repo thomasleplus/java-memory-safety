@@ -7,10 +7,11 @@
 | SpotBugs   | &#x274C;     | &#x274C;       |
 | PMD        | &#x274C;     | &#x274C;       |
 | CheckStyle | &#x2705;     | &#x1F527;      |
+| SonarQube  | FIXME: TBD   | FIXME: TBD     |
 | CodeQL     | &#x2705;     | &#x274C;       |
 | Veracode   | FIXME: TBD   | FIXME: TBD     |
 | Checkmarx  | FIXME: TBD   | FIXME: TBD     |
 
-Request it &#x1F91E; or write your own &#x1F4AA;. FIXME: open issues if needed.
+Request it &#x1F91E; or write your own &#x1F4AA;.
 
 Note: Even a simple `grep` of your code should do it.

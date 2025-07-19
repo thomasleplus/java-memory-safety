@@ -3,8 +3,7 @@
 <module name="Checker">
   <module name="TreeWalker">
     <module name="IllegalImport">
-      <property name="illegalPkgs" value=""/>
-      <property name="illegalClasses" value="sun.misc.Unsafe, jdk.internal.misc.Unsafe"/>
+      <property name="illegalPkgs" value="sun, jdk.internal"/>
     </module>
   </module>
 </module>
