@@ -202,6 +202,9 @@
 	<artifactId>spotbugs-maven-plugin</artifactId>
 	<version>${spotbugs.version}</version>
         <configuration>
+	  <effort>max</effort>
+	  <threshold>Low</threshold>
+	  <failOnError>false</failOnError>
           <plugins>
             <plugin>
               <groupId>com.h3xstream.findsecbugs</groupId>
@@ -236,6 +239,18 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.6.0</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>checkstyle</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+	<configuration>
+          <configLocation>../../checkstyle/unsafe_checks.xml</configLocation>
+	  <violationSeverity>info</violationSeverity>
+	  <failsOnError>false</failsOnError>
+	</configuration>
       </plugin>
       <plugin>
         <groupId>com.github.spotbugs</groupId>

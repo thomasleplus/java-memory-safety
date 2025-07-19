@@ -4,8 +4,8 @@
 
 |            | `s.m.Unsafe` | `j.i.m.Unsafe` |
 | ---------- | ------------ | -------------- |
-| SpotBugs   | FIXME: TBD   | FIXME: TBD     |
-| PMD        | FIXME: TBD   | FIXME: TBD     |
+| SpotBugs   | &#x274C;     | &#x274C;       |
+| PMD        | &#x274C;     | &#x274C;       |
 | CheckStyle | &#x2705;     | &#x1F527;      |
 | CodeQL     | &#x2705;     | &#x274C;       |
 | Veracode   | FIXME: TBD   | FIXME: TBD     |

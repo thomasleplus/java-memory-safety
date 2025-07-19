@@ -48,6 +48,9 @@ The [`exploit`](exploit/) directory contains scripts to automate the
 exploitation of the unsafe implementations above. The same code can be
 used against the safe implementations for comparison.
 
+The [`checkstyle`](checkstyle/) directory contains a Checkstyle
+configuration file to detect occurrences of non memory-safe Java code.
+
 The [`spotbugs`](spotbugs/) directory contains a SpotBugs plugin to
 detect occurrences of non memory-safe Java code.
 
