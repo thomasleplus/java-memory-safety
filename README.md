@@ -30,7 +30,7 @@ operating system libraries.
 ## Presentation
 
 I presentated this stiday as a talk to various meetups and
-conferences. You can find the slides [here](https://thomasleplus.github.io/java-memory-safety/).
+conferences. You can see the [slides](https://thomasleplus.github.io/java-memory-safety/).
 
 ## Code
 
