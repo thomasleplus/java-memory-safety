@@ -10,7 +10,8 @@ updates:
     cooldown:
       default-days: 7
     commit-message:
-      prefix: chore(dev-deps)
+      prefix: chore(deps)
+      prefix-development: chore(dev-deps)
   - package-ecosystem: "npm"
     directories:
       - "/docs"
@@ -19,7 +20,8 @@ updates:
     cooldown:
       default-days: 7
     commit-message:
-      prefix: chore(dev-deps)
+      prefix: chore(deps)
+      prefix-development: chore(dev-deps)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
