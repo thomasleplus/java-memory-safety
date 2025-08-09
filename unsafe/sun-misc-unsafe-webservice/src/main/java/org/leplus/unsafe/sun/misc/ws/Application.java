@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 @SpringBootApplication
-public final class Application {
+public class Application {
 
   @Bean
   public CommonsRequestLoggingFilter requestLoggingFilter() {
