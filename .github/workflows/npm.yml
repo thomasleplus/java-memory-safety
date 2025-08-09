@@ -10,10 +10,6 @@ on:
 
 permissions: {}
 
-defaults:
-  run:
-    working-directory: docs
-
 jobs:
   build:
     name: Build with NPM
@@ -32,12 +28,15 @@ jobs:
           node-version: 20
       - name: Install dependencies
         shell: bash
+        working-directory: docs
         run: npm install
       - name: Build
         shell: bash
+        working-directory: docs
         run: npm run dist
       - name: Upload artifacts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+    working-directory: docs
         with:
           name: ${{ env.REPOSITORY }}
-          path: dist/
+          path: docs/dist/
