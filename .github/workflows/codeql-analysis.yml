@@ -36,22 +36,34 @@ jobs:
         include:
           - language: actions
             build-mode: none
-            subproject:
-              - "."
+            subproject: "."
           - language: javascript-typescript
             build-mode: none
-            subproject:
-              - "docs"
+            subproject: "docs"
           - language: java-kotlin
             build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
-            subproject:
-              - "safe/java-lang-foreign-memorysegment"
-              - "safe/java-lang-webservice"
-              - "safe/java-lang-foreign-webservice"
-              - "spotbugs"
-              - "unsafe/jdk-internal-misc-unsafe"
-              - "unsafe/sun-misc-unsafe"
-              - "unsafe/sun-misc-unsafe-webservice"
+            subproject: "safe/java-lang-foreign-memorysegment"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "safe/java-lang-webservice"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "safe/java-lang-foreign-memorysegment"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "safe/java-lang-foreign-webservice"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "spotbugs"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "unsafe/jdk-internal-misc-unsafe"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "unsafe/sun-misc-unsafe"
+          - language: java-kotlin
+            build-mode: none # This mode only analyzes Java. Set this to 'autobuild' or 'manual' to analyze Kotlin too.
+            subproject: "unsafe/sun-misc-unsafe-webservice"
         # CodeQL supports the following values keywords for 'language': 'actions', 'c-cpp', 'csharp', 'go', 'java-kotlin', 'javascript-typescript', 'python', 'ruby', 'rust', 'swift'
         # Use `c-cpp` to analyze code written in C, C++ or both
         # Use 'java-kotlin' to analyze code written in Java, Kotlin or both
