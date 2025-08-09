@@ -33,9 +33,6 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: npm install
-      - name: Check outdated dependencies
-        shell: bash
-        run: npm outdated --global
       - name: Build
         shell: bash
         run: npm run dist
