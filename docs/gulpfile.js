@@ -20,9 +20,9 @@ const minify = require("gulp-clean-css");
 const connect = require("gulp-connect");
 const autoprefixer = require("gulp-autoprefixer");
 
-const root = yargs.argv ? yargs.argv.root : ".";
-const port = yargs.argv ? yargs.argv.port : 8000;
-const host = yargs.argv ? yargs.argv.host : "localhost";
+const root = yargs.argv && yargs.argv.root ? yargs.argv.root : ".";
+const port = yargs.argv && yargs.argv.port ? yargs.argv.port : 8000;
+const host = yargs.argv && yargs.argv.host ? yargs.argv.host : "localhost";
 
 const cssLicense = `
 reveal.js ${pkg.version}
