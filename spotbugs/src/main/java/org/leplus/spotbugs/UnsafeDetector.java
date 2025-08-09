@@ -49,7 +49,7 @@ public class UnsafeDetector extends OpcodeStackDetector {
     if (getClassConstantOperand().equals("sun/misc/Unsafe")
         || getClassConstantOperand().equals("jdk/internal/misc/Unsafe")) {
       BugInstance bug =
-          new BugInstance(this, "UNSAFE_CALL", BugInstance.HIGH_PRIORITY)
+          new BugInstance(this, "UNSAFE_CALL", HIGH_PRIORITY)
               .addCalledMethod(this)
               .addClassAndMethod(this)
               .addSourceLine(this, getPC());
