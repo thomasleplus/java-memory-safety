@@ -1,3 +1,11 @@
 {
-  "ignore": ["docs/*/**", "reports/**", "**/pom.xml"]
+  "ignore": [
+    "**/pom.xml",
+    "**/.idea/**",
+    "docs/css/**",
+    "docs/dist/**",
+    "docs/js/**",
+    "docs/plugin/**",
+    "reports/**"
+  ]
 }
