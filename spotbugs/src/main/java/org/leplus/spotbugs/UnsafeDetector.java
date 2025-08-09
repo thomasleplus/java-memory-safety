@@ -18,9 +18,9 @@ import org.apache.bcel.Const;
 public class UnsafeDetector extends OpcodeStackDetector {
 
   /**
-   * The {@code BugReporter} instance used to report detected bugs.
-   * This field is initialized via constructor injection and is used throughout
-   * the detector to log or report any unsafe code patterns found during analysis.
+   * The {@code BugReporter} instance used to report detected bugs. This field is initialized via
+   * constructor injection and is used throughout the detector to log or report any unsafe code
+   * patterns found during analysis.
    */
   private final BugReporter bugReporter;
 
@@ -34,10 +34,10 @@ public class UnsafeDetector extends OpcodeStackDetector {
   }
 
   /**
-   * Inspects bytecode instructions as they are encountered. Specifically, this method checks
-   * if the current opcode is an invocation of a virtual method ({@code INVOKEVIRTUAL}) on the
-   * {@code sun/misc/Unsafe} or {@code jdk/internal/misc/Unsafe} classes. If such a call is detected,
-   * it reports a high-priority bug instance indicating the use of potentially unsafe operations.
+   * Inspects bytecode instructions as they are encountered. Specifically, this method checks if the
+   * current opcode is an invocation of a virtual method ({@code INVOKEVIRTUAL}) on the {@code
+   * sun/misc/Unsafe} or {@code jdk/internal/misc/Unsafe} classes. If such a call is detected, it
+   * reports a high-priority bug instance indicating the use of potentially unsafe operations.
    *
    * @param seen the opcode of the currently visited instruction
    */
