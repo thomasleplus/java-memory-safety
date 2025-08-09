@@ -3,6 +3,7 @@
 A study of the limits of Java's memory safety.
 
 [![Maven](https://github.com/thomasleplus/java-memory-safety/workflows/Maven/badge.svg)](https://github.com/thomasleplus/java-memory-safety/actions?query=workflow:"Maven")
+[![NPM](https://github.com/leplusorg/ristretto/workflows/NPM/badge.svg)](https://github.com/leplusorg/ristretto/actions?query=workflow:"NPM")
 [![CodeQL](https://github.com/thomasleplus/java-memory-safety/workflows/CodeQL/badge.svg)](https://github.com/thomasleplus/java-memory-safety/actions?query=workflow:"CodeQL")
 
 ## Goals
