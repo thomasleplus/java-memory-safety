@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sun.misc.Unsafe;
 
 @RestController
-public class Controller {
+public final class Controller {
 
   private static final int BUFFER_SIZE = 366;
 
@@ -27,7 +27,7 @@ public class Controller {
   }
 
   @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id)
+  public void setEmployeeIdForDay(@PathVariable final int day, @RequestBody final long id)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
       getUnsafe().putLong(address + (long) day * (long) Long.BYTES, id);
@@ -35,7 +35,7 @@ public class Controller {
   }
 
   @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public long getEmployeeIdForDay(@PathVariable int day)
+  public long getEmployeeIdForDay(@PathVariable final int day)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
       return getUnsafe().getLong(address + (long) day * (long) Long.BYTES);

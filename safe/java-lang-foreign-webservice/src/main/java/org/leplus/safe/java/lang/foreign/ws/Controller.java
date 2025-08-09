@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class Controller {
+public final class Controller {
 
   private static final int BUFFER_SIZE = 366;
 
@@ -18,14 +18,14 @@ public class Controller {
   }
 
   @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void setEmployeeIdForDay(@PathVariable int day, @RequestBody long id) {
+  public void setEmployeeIdForDay(@PathVariable final int day, @RequestBody final long id) {
     synchronized (segment) {
       segment.set(ValueLayout.JAVA_LONG, (long) day * (long) Long.BYTES, id);
     }
   }
 
   @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public long getEmployeeIdForDay(@PathVariable int day) {
+  public long getEmployeeIdForDay(@PathVariable final int day) {
     synchronized (segment) {
       return segment.get(ValueLayout.JAVA_LONG, (long) day * (long) Long.BYTES);
     }
