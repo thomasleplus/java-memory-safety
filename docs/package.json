@@ -39,7 +39,7 @@
     "@rollup/plugin-terser": "0.4.4",
     "babel-plugin-transform-html-import-to-string": "2.0.0",
     "colors": "1.4.0",
-    "core-js": "3.44.0",
+    "core-js": "3.45.0",
     "fitty": "2.4.2",
     "glob": "11.0.3",
     "gulp": "5.0.1",
@@ -50,12 +50,12 @@
     "gulp-header-comment": "0.10.0",
     "gulp-zip": "6.1.0",
     "highlight.js": "11.11.1",
-    "marked": "16.1.1",
+    "marked": "16.1.2",
     "node-qunit-puppeteer": "2.2.1",
     "through2": "4.0.2",
     "qunit": "2.24.1",
     "rollup": "4.46.2",
-    "sass": "1.89.2",
+    "sass": "1.90.0",
     "yargs": "18.0.0"
   },
   "overrides": {
