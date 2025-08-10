@@ -4,8 +4,9 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 
 /**
- * This class is intended to demonstrate safe (failing) uses of java.lang.foreign.MemorySegment. DO
- * NOT USE THIS CODE AS AN EXAMPLE FOR ANYTHING. You've been warned.
+ * This class is intended to demonstrate safe (failing) uses of
+ * java.lang.foreign.MemorySegment. DO NOT USE THIS CODE AS AN EXAMPLE FOR
+ * ANYTHING. You've been warned.
  *
  * @author Thomas Leplus
  * @since 1.0.0

@@ -31,8 +31,11 @@ public final class Controller {
    * @param day the day.
    * @param id the employee ID.
    */
-  @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void setEmployeeIdForDay(@PathVariable final int day, @RequestBody final long id) {
+  @PostMapping(
+      path = "/schedule/{day}",
+      consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void setEmployeeIdForDay(
+      @PathVariable final int day, @RequestBody final long id) {
     synchronized (segment) {
       segment.set(ValueLayout.JAVA_LONG, (long) day * (long) Long.BYTES, id);
     }
@@ -44,7 +47,9 @@ public final class Controller {
    * @param day the day.
    * @return the employee ID.
    */
-  @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(
+      path = "/schedule/{day}",
+      produces = MediaType.APPLICATION_JSON_VALUE)
   public long getEmployeeIdForDay(@PathVariable final int day) {
     synchronized (segment) {
       return segment.get(ValueLayout.JAVA_LONG, (long) day * (long) Long.BYTES);
