@@ -15,7 +15,9 @@ import sun.misc.Unsafe;
 public final class Controller {
 
   /** The buffer size. */
+  // CHECKSTYLE:OFF MagicNumber
   private static final int BUFFER_SIZE = 366;
+  // CHECKSTYLE:ON MagicNumber
 
   /** The lock. */
   private final Object lock = new Object();
