@@ -273,15 +273,6 @@
                 </ignoreVersions>
               </rule>
               <rule>
-                <groupId>org.apache.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
                 <groupId>org.awaitility</groupId>
                 <ignoreVersions>
                   <ignoreVersion>

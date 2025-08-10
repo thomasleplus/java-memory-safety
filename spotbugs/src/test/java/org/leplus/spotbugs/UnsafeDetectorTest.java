@@ -12,8 +12,10 @@ import java.nio.file.Paths;
 import org.junit.Rule;
 import org.junit.Test;
 
+/** Tests for the {@link UnsafeDetector}. */
 public class UnsafeDetectorTest {
 
+  /** The SpotBugs rule. */
   @Rule public SpotBugsRule spotbugs = new SpotBugsRule();
 
   private void testBadCase(final String name) {
@@ -28,21 +30,25 @@ public class UnsafeDetectorTest {
     assertThat(bugCollection, containsExactly(1, bugTypeMatcher));
   }
 
+  /** Tests the bad case for {@code sun.misc.Unsafe}. */
   @Test
   public void testBadCaseSun() {
     testBadCase("Sun");
   }
 
+  /** Tests the bad case for {@code sun.misc.Unsafe} with a fully qualified name. */
   @Test
   public void testBadCaseSunQualified() {
     testBadCase("SunQualified");
   }
 
+  /** Tests the bad case for {@code jdk.internal.misc.Unsafe}. */
   @Test
   public void testBadCaseJdk() {
     testBadCase("Jdk");
   }
 
+  /** Tests the bad case for {@code jdk.internal.misc.Unsafe} with a fully qualified name. */
   @Test
   public void testBadCaseJdkQualified() {
     testBadCase("JdkQualified");

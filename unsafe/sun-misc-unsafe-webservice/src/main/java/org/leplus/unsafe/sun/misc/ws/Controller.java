@@ -1,17 +1,16 @@
 package org.leplus.unsafe.sun.misc.ws;
 
+import jakarta.annotation.PostConstruct;
 import java.lang.reflect.Field;
-
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import jakarta.annotation.PostConstruct;
 import sun.misc.Unsafe;
 
+/** A simple REST controller. */
 @RestController
 public final class Controller {
 
@@ -27,11 +26,25 @@ public final class Controller {
     return (Unsafe) f.get(null);
   }
 
+  /**
+   * Initializes the controller.
+   *
+   * @throws NoSuchFieldException if the unsafe field cannot be found.
+   * @throws IllegalAccessException if the unsafe field cannot be accessed.
+   */
   @PostConstruct
   public void initialize() throws NoSuchFieldException, IllegalAccessException {
     address = getUnsafe().allocateMemory(BUFFER_SIZE * Long.BYTES);
   }
 
+  /**
+   * Sets the employee ID for a given day.
+   *
+   * @param day the day.
+   * @param id the employee ID.
+   * @throws NoSuchFieldException if the unsafe field cannot be found.
+   * @throws IllegalAccessException if the unsafe field cannot be accessed.
+   */
   @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
   public void setEmployeeIdForDay(@PathVariable final int day, @RequestBody final long id)
       throws NoSuchFieldException, IllegalAccessException {
@@ -40,6 +53,14 @@ public final class Controller {
     }
   }
 
+  /**
+   * Returns the employee ID for a given day.
+   *
+   * @param day the day.
+   * @return the employee ID.
+   * @throws NoSuchFieldException if the unsafe field cannot be found.
+   * @throws IllegalAccessException if the unsafe field cannot be accessed.
+   */
   @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
   public long getEmployeeIdForDay(@PathVariable final int day)
       throws NoSuchFieldException, IllegalAccessException {
