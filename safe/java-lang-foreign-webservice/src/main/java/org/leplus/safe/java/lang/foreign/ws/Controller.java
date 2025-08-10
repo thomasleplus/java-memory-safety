@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public final class Controller {
 
+  /** The buffer size. */
   private static final int BUFFER_SIZE = 366;
 
+  /** The segment. */
   private MemorySegment segment = null;
 
   /** Initializes the controller. */

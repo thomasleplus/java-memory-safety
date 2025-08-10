@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public final class Controller {
 
+  /** The schedule. */
   private final long[] schedule = new long[366];
 
   /**

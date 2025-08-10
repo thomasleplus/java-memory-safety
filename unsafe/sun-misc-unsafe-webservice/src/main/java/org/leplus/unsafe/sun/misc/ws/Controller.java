@@ -14,10 +14,13 @@ import sun.misc.Unsafe;
 @RestController
 public final class Controller {
 
+  /** The buffer size. */
   private static final int BUFFER_SIZE = 366;
 
+  /** The lock. */
   private final Object lock = new Object();
 
+  /** The address. */
   private long address;
 
   private Unsafe getUnsafe()
