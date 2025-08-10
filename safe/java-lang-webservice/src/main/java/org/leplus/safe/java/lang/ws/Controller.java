@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public final class Controller {
 
   /** The schedule. */
+  @SuppressWarnings("checkstyle:MagicNumber")
   private final long[] schedule = new long[366];
 
   /**

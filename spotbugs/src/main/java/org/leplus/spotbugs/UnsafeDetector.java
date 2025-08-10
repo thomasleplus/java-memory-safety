@@ -30,11 +30,11 @@ public class UnsafeDetector extends OpcodeStackDetector {
    * Constructs a new {@code UnsafeDetector} with the specified {@link
    * BugReporter}.
    *
-   * @param bugReporter the {@link BugReporter} instance used to report detected
+   * @param reporter the {@link BugReporter} instance used to report detected
    *     bugs
    */
-  public UnsafeDetector(BugReporter bugReporter) {
-    this.bugReporter = bugReporter;
+  public UnsafeDetector(final BugReporter reporter) {
+    this.bugReporter = reporter;
   }
 
   /**
@@ -48,7 +48,7 @@ public class UnsafeDetector extends OpcodeStackDetector {
    * @param seen the opcode of the currently visited instruction
    */
   @Override
-  public void sawOpcode(int seen) {
+  public void sawOpcode(final int seen) {
     if (seen != Const.INVOKEVIRTUAL) {
       return;
     }
