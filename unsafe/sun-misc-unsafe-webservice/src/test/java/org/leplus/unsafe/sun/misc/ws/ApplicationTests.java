@@ -9,5 +9,7 @@ class ApplicationTests {
 
   /** Tests that the application context loads. */
   @Test
-  void contextLoads() {}
+  void contextLoads() {
+    // do nothing
+  }
 }
