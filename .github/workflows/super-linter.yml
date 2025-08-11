@@ -66,6 +66,8 @@ jobs:
           JAVA_COMMAND_ARGS: "-Dorg.checkstyle.sun.suppressionfilter.config=checkstyle/suppressions.xml"
           LINTER_RULES_PATH: .
           DEFAULT_BRANCH: main
+          ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
+          ENABLE_COMMITLINT_STRICT_MODE: true
           FILTER_REGEX_EXCLUDE: "(gradlew|gradlew\\.bat|gradle/.*|mvnw|mvnw\\.cmd|\\.m2/.*|\\.mvn/.*|docs/css/.*|docs/dist/.*|docs/js/.*|docs/node_modules/.*|docs/plugin/.*|reports/.*)$"
           JAVA_FILE_NAME: "google_checks.xml"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
