@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public final class Controller {
 
+  /** The buffer size: the maximum number of days of the year. */
+  private static final int BUFFER_SIZE = 366;
+
   /** The schedule. */
-  // CHECKSTYLE:OFF MagicNumber
-  private final long[] schedule = new long[366];
-  // CHECKSTYLE:ON MagicNumber
+  private final long[] schedule = new long[BUFFER_SIZE];
 
   /**
    * Sets the employee ID for a given day.
