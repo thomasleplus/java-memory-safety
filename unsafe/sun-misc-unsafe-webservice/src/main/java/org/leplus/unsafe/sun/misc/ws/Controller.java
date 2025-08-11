@@ -23,8 +23,7 @@ public final class Controller {
   /** The address. */
   private long address;
 
-  private Unsafe getUnsafe()
-      throws IllegalAccessException, NoSuchFieldException {
+  private Unsafe getUnsafe() throws IllegalAccessException, NoSuchFieldException {
     final Field f = Unsafe.class.getDeclaredField("theUnsafe");
     f.setAccessible(true);
     return (Unsafe) f.get(null);
@@ -49,11 +48,8 @@ public final class Controller {
    * @throws NoSuchFieldException if the unsafe field cannot be found.
    * @throws IllegalAccessException if the unsafe field cannot be accessed.
    */
-  @PostMapping(
-      path = "/schedule/{day}",
-      consumes = MediaType.APPLICATION_JSON_VALUE)
-  public void setEmployeeIdForDay(
-      @PathVariable final int day, @RequestBody final long id)
+  @PostMapping(path = "/schedule/{day}", consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void setEmployeeIdForDay(@PathVariable final int day, @RequestBody final long id)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {
       getUnsafe().putLong(address + (long) day * (long) Long.BYTES, id);
@@ -68,9 +64,7 @@ public final class Controller {
    * @throws NoSuchFieldException if the unsafe field cannot be found.
    * @throws IllegalAccessException if the unsafe field cannot be accessed.
    */
-  @GetMapping(
-      path = "/schedule/{day}",
-      produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(path = "/schedule/{day}", produces = MediaType.APPLICATION_JSON_VALUE)
   public long getEmployeeIdForDay(@PathVariable final int day)
       throws NoSuchFieldException, IllegalAccessException {
     synchronized (lock) {

@@ -36,9 +36,7 @@ public class UnsafeDetectorTest {
     testBadCase("Sun");
   }
 
-  /**
-   * Tests the bad case for {@code sun.misc.Unsafe} with a fully qualified name.
-   */
+  /** Tests the bad case for {@code sun.misc.Unsafe} with a fully qualified name. */
   @Test
   public void testBadCaseSunQualified() {
     testBadCase("SunQualified");
@@ -50,10 +48,7 @@ public class UnsafeDetectorTest {
     testBadCase("Jdk");
   }
 
-  /**
-   * Tests the bad case for {@code jdk.internal.misc.Unsafe} with a fully
-   * qualified name.
-   */
+  /** Tests the bad case for {@code jdk.internal.misc.Unsafe} with a fully qualified name. */
   @Test
   public void testBadCaseJdkQualified() {
     testBadCase("JdkQualified");

@@ -16,8 +16,7 @@ public class Application {
    */
   @Bean
   public CommonsRequestLoggingFilter requestLoggingFilter() {
-    CommonsRequestLoggingFilter loggingFilter =
-        new CommonsRequestLoggingFilter();
+    CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
     loggingFilter.setIncludeQueryString(true);
     loggingFilter.setIncludePayload(true);
     return loggingFilter;
