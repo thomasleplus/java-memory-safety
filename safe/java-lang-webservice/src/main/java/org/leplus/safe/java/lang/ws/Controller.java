@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public final class Controller {
 
   /** The schedule. */
-  @SuppressWarnings("checkstyle:MagicNumber")
+  // CHECKSTYLE:OFF MagicNumber
   private final long[] schedule = new long[366];
+  // CHECKSTYLE:ON MagicNumber
 
   /**
    * Sets the employee ID for a given day.
