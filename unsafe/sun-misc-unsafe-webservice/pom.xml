@@ -214,7 +214,7 @@
           <ruleSet>
             <rules>
               <rule>
-                <groupId>biz.*</groupId>
+                <groupId>jakarta.annotation</groupId>
                 <ignoreVersions>
                   <ignoreVersion>
                     <type>regex</type>
@@ -223,7 +223,7 @@
                 </ignoreVersions>
               </rule>
               <rule>
-                <groupId>co.*</groupId>
+                <groupId>org.apache.httpcomponents.client5</groupId>
                 <ignoreVersions>
                   <ignoreVersion>
                     <type>regex</type>
@@ -232,7 +232,8 @@
                 </ignoreVersions>
               </rule>
               <rule>
-                <groupId>com.*</groupId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
                 <ignoreVersions>
                   <ignoreVersion>
                     <type>regex</type>
@@ -241,178 +242,8 @@
                 </ignoreVersions>
               </rule>
               <rule>
-                <groupId>commons-codec</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>io.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>jakarta.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>net.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.awaitility</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.eclipse.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.elasticsearch.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.flywaydb</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.hibernate.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.hsqldb</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.htmlunit</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.infinispan</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.jetbrains.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.jooq</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.junit.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.liquibase</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.mockito</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.seleniumhq.*</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>org.xerial</groupId>
-                <ignoreVersions>
-                  <ignoreVersion>
-                    <type>regex</type>
-                    <version>.*</version>
-                  </ignoreVersion>
-                </ignoreVersions>
-              </rule>
-              <rule>
-                <groupId>redis.*</groupId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
                 <ignoreVersions>
                   <ignoreVersion>
                     <type>regex</type>
