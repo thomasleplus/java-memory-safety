@@ -1,5 +1,5 @@
 ---
-name: NPM Outdated
+name: NPM Check Versions
 
 on:
   schedule:
