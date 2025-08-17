@@ -15,6 +15,7 @@ jobs:
       matrix:
         subproject:
           [
+            "spotbugs",
             "safe/java-lang-foreign-memorysegment",
             "safe/java-lang-webservice",
             "unsafe/jdk-internal-misc-unsafe",
