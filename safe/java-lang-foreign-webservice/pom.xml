@@ -69,7 +69,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>24</java.minVersion>
-    <spotbugs.version>4.9.3.2</spotbugs.version>
+    <spotbugs.version>4.9.4.0</spotbugs.version>
     <dependencyCheck.version>12.1.3</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
@@ -299,7 +299,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.9.3.2</version>
+        <version>${spotbugs.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
