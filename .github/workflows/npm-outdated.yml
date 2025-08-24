@@ -25,4 +25,7 @@ jobs:
           node-version: 24
       - name: Check outdated dependencies
         shell: bash
-        run: npm outdated --global
+        run: |
+          set -euo pipefail
+          IFS=$'\n\t'
+          npm outdated --global
