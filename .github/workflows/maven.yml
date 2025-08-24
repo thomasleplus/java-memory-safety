@@ -24,7 +24,7 @@ env:
     --show-version
     -DinstallAtEnd=true
     -DdeployAtEnd=true
-  MAVEN_CLI_EXTRA_OPTS: ''
+  MAVEN_CLI_EXTRA_OPTS: ""
 
 jobs:
   build_samples:
