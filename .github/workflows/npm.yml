@@ -38,7 +38,7 @@ jobs:
         run: |
           set -euo pipefail
           IFS=$'\n\t'
-          sudo npm install
+          npm install
       - name: Build
         shell: bash
         working-directory: docs
