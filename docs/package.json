@@ -39,7 +39,7 @@
     "@rollup/plugin-terser": "0.4.4",
     "babel-plugin-transform-html-import-to-string": "2.0.0",
     "colors": "1.4.0",
-    "core-js": "3.45.0",
+    "core-js": "3.45.1",
     "fitty": "2.4.2",
     "glob": "11.0.3",
     "gulp": "5.0.1",
