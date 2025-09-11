@@ -44,7 +44,8 @@
         <version>3.14.0</version>
         <configuration>
           <encoding>UTF-8</encoding>
-          <release>${java.minVersion}</release>
+          <source>${java.minVersion}</source>
+          <target>${java.minVersion}</target>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
           <compilerArgs>
