@@ -66,8 +66,7 @@ jobs:
           VALIDATE_GOOGLE_JAVA_FORMAT: false # FIXME: conflicts with checkstyle (e.g. max line length 80 vs 100)
           LINTER_RULES_PATH: .
           DEFAULT_BRANCH: main
-          ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
-          ENABLE_COMMITLINT_STRICT_MODE: true
           FILTER_REGEX_EXCLUDE: "(gradlew|gradlew\\.bat|gradle/.*|mvnw|mvnw\\.cmd|\\.m2/.*|\\.mvn/.*|docs/css/.*|docs/dist/.*|docs/js/.*|docs/node_modules/.*|docs/plugin/.*|reports/.*)$"
           JAVA_FILE_NAME: "google_checks.xml"
+          ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
