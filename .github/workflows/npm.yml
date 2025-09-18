@@ -11,7 +11,7 @@ on:
 permissions: {}
 
 jobs:
-  build:
+  npm:
     name: Build with NPM
     runs-on: ubuntu-latest
     steps:

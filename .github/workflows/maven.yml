@@ -27,7 +27,7 @@ env:
   MAVEN_CLI_EXTRA_OPTS: ""
 
 jobs:
-  build_samples:
+  maven:
     runs-on: ubuntu-latest
     strategy:
       matrix:
