@@ -13,8 +13,7 @@ defaults:
     working-directory: docs
 
 jobs:
-  npm-outdated:
-    name: Check with NPM Outdated
+  npm-check-versions:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -30,4 +29,6 @@ jobs:
         run: |
           set -euo pipefail
           IFS=$'\n\t'
-          npm outdated --global
+          if npx npm-check-updates | tee -a /dev/stderr | grep -q -e '→' ; then
+            exit 1
+          fi
