@@ -1,17 +1,15 @@
 {
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "files": {
-    "includes": [
-      "**",
-      "!docs/css/**",
-      "!docs/dist/**",
-      "!docs/js/**",
-      "!docs/node_modules/**",
-      "!docs/plugin/**",
-      "!reports/**"
-    ]
+    "includes": ["**", "!**/docs/dist", "!**/docs/js", "!**/docs/plugin"]
   },
   "formatter": {
     "indentStyle": "space",
     "indentWidth": 2
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   }
 }

@@ -20,9 +20,9 @@ const minify = require("gulp-clean-css");
 const connect = require("gulp-connect");
 const autoprefixer = require("gulp-autoprefixer").default;
 
-const root = yargs.argv && yargs.argv.root ? yargs.argv.root : ".";
-const port = yargs.argv && yargs.argv.port ? yargs.argv.port : 8000;
-const host = yargs.argv && yargs.argv.host ? yargs.argv.host : "localhost";
+const root = yargs.argv?.root ? yargs.argv.root : ".";
+const port = yargs.argv?.port ? yargs.argv.port : 8000;
+const host = yargs.argv?.host ? yargs.argv.host : "localhost";
 
 const cssLicense = `
 reveal.js ${pkg.version}
@@ -76,7 +76,7 @@ babelConfigESM.presets[0][1].targets = {
   ],
 };
 
-let cache = {};
+const cache = {};
 
 // Creates a bundle with broad browser support, exposed
 // as UMD
@@ -183,7 +183,7 @@ gulp.task("plugins", () => {
 
 // a custom pipeable step to transform Sass to CSS
 function compileSass() {
-  return through.obj((vinylFile, encoding, callback) => {
+  return through.obj((vinylFile, _encoding, callback) => {
     const transformedFile = vinylFile.clone();
 
     sass.render(
@@ -225,21 +225,21 @@ gulp.task("css-core", () =>
 gulp.task("css", gulp.parallel("css-themes", "css-core"));
 
 gulp.task("qunit", () => {
-  let serverConfig = {
+  const serverConfig = {
     root,
     port: 8009,
     host: "localhost",
     name: "test-server",
   };
 
-  let server = connect.server(serverConfig);
+  const server = connect.server(serverConfig);
 
-  let testFiles = glob.sync("test/*.html");
+  const testFiles = glob.sync("test/*.html");
 
   let totalTests = 0;
   let failingTests = 0;
 
-  let tests = Promise.all(
+  const tests = Promise.all(
     testFiles.map((filename) => {
       return new Promise((resolve, reject) => {
         qunit
@@ -312,7 +312,7 @@ gulp.task("build", gulp.parallel("js", "css", "plugins"));
 gulp.task(
   "package",
   gulp.series(async () => {
-    let dirs = ["./index.html", "./dist/**", "./plugin/**", "./*/*.md"];
+    const dirs = ["./index.html", "./dist/**", "./plugin/**", "./*/*.md"];
 
     if (fs.existsSync("./lib")) dirs.push("./lib/**");
     if (fs.existsSync("./images")) dirs.push("./images/**");
