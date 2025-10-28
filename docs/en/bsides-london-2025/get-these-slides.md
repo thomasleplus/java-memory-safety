@@ -4,7 +4,7 @@
 
 ![QR](../assets/images/bsides-london-2025-slides-qrcode.png)
 
-Slides &#x1F4CA; [https://thomasleplus.github.io/java-memory-safety/bsides-london-2025](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025)
+Slides &#x1F4CA; [https://thomasleplus.github.io/java-memory-safety/bsides-london-2025/](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025/)
 
 Code &#x1F4DC; [https://github.com/thomasleplus/java-memory-safety/](https://github.com/thomasleplus/java-memory-safety/)
 
