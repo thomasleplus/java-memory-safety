@@ -30,9 +30,11 @@ operating system libraries.
 
 ## Presentation
 
-I presentated this study as a talk to [BSides London 2025](https://bsides.london/bsides-london-2025).
+I presented this study as a talk at the [BSides London 2025](https://bsides.london/bsides-london-2025) conference.
 You can watch the recording
 or get the [slides](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025.html).
+
+There is also a longer version of the [slides](https://thomasleplus.github.io/java-memory-safety/).
 
 ## Code
 
@@ -44,7 +46,7 @@ proof of concept. It can also be used to benchmark the ability to
 detect memory safety issues with static application security testing
 (SAST) tools.
 
-The [`safe`](safe/) directory contains safer alternative implemetations.
+The [`safe`](safe/) directory contains safer alternative implementations.
 
 The [`exploit`](exploit/) directory contains scripts to automate the
 exploitation of the unsafe implementations above. The same code can be
