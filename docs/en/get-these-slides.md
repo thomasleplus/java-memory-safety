@@ -4,9 +4,9 @@
 
 ![QR](assets/images/slides-qrcode.png)
 
-Slides: [https://thomasleplus.github.io/java-memory-safety/](https://thomasleplus.github.io/java-memory-safety/)
+📊 Slides: [https://thomasleplus.github.io/java-memory-safety/](https://thomasleplus.github.io/java-memory-safety/)
 
-Code: [https://github.com/thomasleplus/java-memory-safety/](https://github.com/thomasleplus/java-memory-safety/)
+📜 Code: [https://github.com/thomasleplus/java-memory-safety/](https://github.com/thomasleplus/java-memory-safety/)
 
 Note: I will give you some time to take a picture if you want to get
 these slides. And I will show this again at the end so if you think
