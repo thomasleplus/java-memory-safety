@@ -32,7 +32,7 @@ operating system libraries.
 
 I presented this study as a talk at the [BSides London 2025](https://bsides.london/bsides-london-2025) conference.
 You can watch the recording
-or get the [slides](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025.html).
+or get the [slides](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025).
 
 There is also a longer version of the [slides](https://thomasleplus.github.io/java-memory-safety/).
 
