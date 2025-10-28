@@ -30,8 +30,9 @@ operating system libraries.
 
 ## Presentation
 
-I presentated this stiday as a talk to various meetups and
-conferences. You can see the [slides](https://thomasleplus.github.io/java-memory-safety/).
+I presentated this study as a talk to [BSides London 2025](https://bsides.london/bsides-london-2025).
+You can watch the recording
+or get the [slides](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025.html).
 
 ## Code
 
