@@ -66,3 +66,19 @@ Results from this study are shared in this document and key takeaways
 are published in the OSSF Memory Safety SIG Best Practices series
 (especially [Memory-Safe By Default Languages](https://github.com/ossf/Memory-Safety/blob/main/docs/best-practice-memory-safe-by-default-languages.md)
 and [Interfacing Between Memory-Safe By Default and Non-Memory-Safe by Default Languages](https://github.com/ossf/Memory-Safety/blob/main/docs/best-practice-interfacing.md)).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Security
+
+Please read [SECURITY.md](SECURITY.md) for details on our security policy and how to report security vulnerabilities.
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+
+## License
+
+This project is licensed under the terms of the [LICENSE](LICENSE) file.
