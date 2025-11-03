@@ -96,7 +96,7 @@ jobs:
           IFS=$'\n\t'
           echo "ARTIFACT_NAME=${{ matrix.subproject }}-${{ matrix.java }}" | sed -e 's!/!-!g' >> "${GITHUB_ENV}"
       - name: Upload artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ matrix.subproject }}/target/
@@ -138,7 +138,7 @@ jobs:
           # shellcheck disable=SC2086 # [Double quote to prevent globbing and word splitting]: splitting is desired for MAVEN_CLI_OPTS
           ./mvnw ${MAVEN_CLI_OPTS} verify
       - name: Upload artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: unsafe-plugin
           path: spotbugs/target/
