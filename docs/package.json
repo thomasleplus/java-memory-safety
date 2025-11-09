@@ -50,11 +50,11 @@
     "gulp-header-comment": "0.10.0",
     "gulp-zip": "6.1.0",
     "highlight.js": "11.11.1",
-    "marked": "16.4.1",
+    "marked": "17.0.0",
     "node-qunit-puppeteer": "2.2.1",
     "through2": "4.0.2",
     "qunit": "2.24.2",
-    "rollup": "4.52.5",
+    "rollup": "4.53.1",
     "sass": "1.93.3",
     "yargs": "18.0.0"
   },
