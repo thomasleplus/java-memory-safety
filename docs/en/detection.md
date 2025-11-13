@@ -4,7 +4,7 @@
 
 |            | `s.m.Unsafe` | `j.i.m.Unsafe` |
 | ---------- | ------------ | -------------- |
-| Semgrep    | &#x274C;     | &#x274C;       |
+| Semgrep    | &#x1F527;    | &#x1F527;      |
 | SonarQube  | &#x2705;     | &#x1F527;      |
 | CodeQL     | &#x2705;     | &#x274C;       |
 | CheckStyle | &#x1F527;    | &#x1F527;      |

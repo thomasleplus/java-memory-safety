@@ -51,11 +51,16 @@ The [`exploit`](exploit/) directory contains scripts to automate the
 exploitation of the unsafe implementations above. The same code can be
 used against the safe implementations for comparison.
 
-The [`checkstyle`](checkstyle/) directory contains a Checkstyle
-configuration file to detect occurrences of non memory-safe Java code.
+## Scanners
 
-The [`spotbugs`](spotbugs/) directory contains a SpotBugs plugin to
-detect occurrences of non memory-safe Java code.
+Guidance on how to detect the Unsafe classes with various code
+scanning tools:
+
+- [Checkstyle](checkstyle/)
+- [PMD/Codacy](pmd/)
+- [Semgrep](semgrep/)
+- [SonarQube](sonar/)
+- [SpotBugs](spotbugs/)
 
 The [`reports`](reports/) directory contains some data that was
 gathered during the research needed for this project.
