@@ -12,11 +12,7 @@
 | SpotBugs   | &#x1F6A7;    | &#x1F6A7;      |
 | Scorecard  | &#x1F6A7;    | &#x1F6A7;      |
 
-Request it &#x1F91E; or write your own &#x1F4AA;.
-
-Note: PMD, Checkstyle, SonarCloud and CodeQL have rules for
-`sun.*`. Checkstyle's rule is enabled for Sun profile, but not newer
+Note: Checkstyle's rule is enabled for Sun profile, but not newer
 Google one, and has to be configured further to catch
-`jdk.internal.misc.*`. Ironically it's the only one that doesn't claim
-to be a security tool. Commercial scanner are similar. Even a simple
-`grep` of your code should do it.
+`jdk.internal.misc.*`. Commercial scanner are similar. Request it or
+write your own. Even a simple `grep` of your code could do it.
