@@ -46,7 +46,7 @@ jobs:
           # - iterate packages -> vulnerabilities -> full osv entry -> severity[] (type, score)
           # - extract numeric scores for CVSS types (cvss_v3 or numeric severity[].score)
           # - compare to threshold
-          if echo "${RESULTS}" | base64 -d | jq '
+          if echo "${RESULTS}" | jq '
             .results[]
             | .packages[]?
             | .vulnerabilities[]?

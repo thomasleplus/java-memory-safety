@@ -41,8 +41,8 @@ jobs:
           set -euo pipefail
           IFS=$'\n\t'
           rc=0
-          echo "${NEW_RESULTS}" | base64 -d | jq -r '.results[].packages[].vulnerabilities[].id' | while read -r vid; do
-            if echo "${OLD_RESULTS}" | base64 -d | grep -q -L -e "\"${vid}\""; then
+          echo "${NEW_RESULTS}" | jq -r '.results[].packages[].vulnerabilities[].id' | while read -r vid; do
+            if echo "${OLD_RESULTS}" | grep -q -L -e "\"${vid}\""; then
               rc=$((rc+1))
               >&2 echo "error: PR introduces new vulnerabilities ${vid} (see step 'scan > osv-scanner-pr > Run osv-scanner-reporter' for details)"
             fi
