@@ -10,7 +10,7 @@
     <properties>
       <property name="xpath">
 	<value>
-        <![CDATA[//ClassType[pmd-java:typeIsExactly('sun.misc.Unsafe') or pmd-java:typeIsExactly('jdk.internal.misc.Unsafe')]]]>
+        <![CDATA[//MethodCall[pmd-java:matchesSig('sun.misc.Unsafe#_(_*)') or pmd-java:matchesSig('jdk.internal.misc.Unsafe#_(_*)')]]]>
 	</value>
       </property>
     </properties>
