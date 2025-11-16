@@ -64,7 +64,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>1.8</java.minVersion>
     <spotbugs.version>4.9.8.1</spotbugs.version>
-    <dependencyCheck.version>12.1.8</dependencyCheck.version>
+    <dependencyCheck.version>12.1.9</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
   </properties>
@@ -127,7 +127,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.4.2</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <phase>package</phase>
