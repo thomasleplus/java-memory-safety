@@ -9,5 +9,5 @@
 
 ![LinkedIn](assets/images/linkedin-logo.svg) [linkedin.com/in/thomasleplus](https://www.linkedin.com/in/thomasleplus)
 
-Note: I worked on securing Java application with tens of millions of
+Note: I worked on securing Java applications with tens of millions of
 lines of code. So believe me when I say that I have seen it ALL.
