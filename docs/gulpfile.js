@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("node:fs");
 const pkg = require("./package.json");
 const glob = require("glob");
 const yargs = require("yargs");
@@ -166,13 +166,13 @@ gulp.task("plugins", () => {
       }).then((bundle) => {
         cache[plugin.input] = bundle.cache;
         bundle.write({
-          file: plugin.output + ".esm.js",
+          file: `${plugin.output}.esm.js`,
           name: plugin.name,
           format: "es",
         });
 
         bundle.write({
-          file: plugin.output + ".js",
+          file: `${plugin.output}.js`,
           name: plugin.name,
           format: "umd",
         });
@@ -335,11 +335,11 @@ gulp.task("serve", () => {
     livereload: true,
   });
 
-  const slidesRoot = root.endsWith("/") ? root : root + "/";
+  const slidesRoot = root.endsWith("/") ? root : `${root}/`;
   gulp.watch(
     [
-      slidesRoot + "**/*.html",
-      slidesRoot + "**/*.md",
+      `${slidesRoot}**/*.html`,
+      `${slidesRoot}**/*.md`,
       `!${slidesRoot}**/node_modules/**`, // ignore node_modules
     ],
     gulp.series("reload"),
