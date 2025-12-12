@@ -2,7 +2,7 @@
 
 ### Why do people use it?
 
-A study <sup>[4]</sup> about `sun.misc.Unsafe` found that there are two
+A study <sup>[5]</sup> about `sun.misc.Unsafe` found that there are two
 main reasons why developer use it:
 
 1. Performance
