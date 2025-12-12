@@ -3,8 +3,8 @@
 ## whoami
 
 - More than 20 years of professional Java development with a focus on security.
-- [Open Source Security Foundation (OpenSSF)](https://openssf.org/) Memory Safety Special Interest Group.
-- [Capital Fund Management (CFM)](https://www.cfm.com/), a quantitative asset-management firm.
+- Member of [Open Source Security Foundation (OpenSSF)](https://openssf.org/) Memory Safety Special Interest Group.
+- Work at [Capital Fund Management (CFM)](https://www.cfm.com/), a quantitative asset-management firm.
 
 ![GitHub](../assets/images/github-logo.svg) [github.com/thomasleplus](https://github.com/thomasleplus)
 
