@@ -5,5 +5,6 @@
 - Write software in a memory-safe language.
 - If Java, do not use the `Unsafe` classes. Prefer the FFM API.
 - Use SAST tools to detect and review occurrences, present or future.
+- Use SCA tools to keep your third-party dependencies free from CVEs.
 
 Note: FIXME
