@@ -19,5 +19,4 @@ public double getDouble(long address);
 public void putDouble(long address, double x);
 ```
 
-Note: Forget everything that I said until now! Undocumented API
-introduced with Java 8.
+Note: Undocumented API introduced with Java 8 (2014).

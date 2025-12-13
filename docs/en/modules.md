@@ -11,5 +11,6 @@
   marked for removal. But not `jdk.internal.misc.Unsafe`.
 - Java 26 or later: runtime exceptions by default.
 
-Note: Funny to deprecate undocumented APIs. Speaks to how widely they
-are used. And for that reason they can't be removed easily.
+Note: Modules are supposed to prevent the use of these APIs. Funny to
+deprecate undocumented APIs. Speaks to how widely they are used. And
+for that reason they can't be removed easily.
