@@ -4,7 +4,7 @@
 
 - More than 20 years of professional Java development with a focus on security.
 - Member of [Open Source Security Foundation (OpenSSF)](https://openssf.org/) Memory Safety Special Interest Group.
-- Work at [Capital Fund Management (CFM)](https://www.cfm.com/), a quantitative asset-management firm.
+- AppSec at [Capital Fund Management (CFM)](https://www.cfm.com/), a quantitative asset-management firm.
 
 ![GitHub](../assets/images/github-logo.svg) [github.com/thomasleplus](https://github.com/thomasleplus)
 

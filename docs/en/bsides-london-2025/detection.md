@@ -12,7 +12,8 @@
 | SpotBugs   | &#x1F6A7;    | &#x1F6A7;      |
 | Scorecard  | &#x1F6A7;    | &#x1F6A7;      |
 
-Note: Checkstyle's rule is enabled for Sun profile, but not newer
-Google one, and has to be configured further to catch
-`jdk.internal.misc.*`. Commercial scanner are similar. Request it or
-write your own. Even a simple `grep` of your code could do it.
+Note: If no SAST, you should. Go over list. Commercial scanner are
+similar. SpotBugs and Veracode scan bytecode so with those you could
+scan third-party software or libraries... Request it or write your
+own. Even a simple `grep` of your code could do it. No excuse for not
+checking.

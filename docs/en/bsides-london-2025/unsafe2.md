@@ -13,5 +13,4 @@ public void copyMemory(...);
 ...
 ```
 
-Note: Wait, there's more! None of these methods throw any exception
-and that's not an oversight.
+Note: Wait, there's more! Mention jdk.internal.misc.Unsafe too.

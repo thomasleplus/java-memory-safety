@@ -4,4 +4,4 @@
 
 Demo remote dumping of the whole JVM memory.
 
-Note: FIXME
+Note: Switch to Terminal.
