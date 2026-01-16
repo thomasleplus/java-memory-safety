@@ -70,7 +70,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>24</java.minVersion>
     <spotbugs.version>4.9.8.2</spotbugs.version>
-    <dependencyCheck.version>12.1.9</dependencyCheck.version>
+    <dependencyCheck.version>12.2.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
   </properties>
