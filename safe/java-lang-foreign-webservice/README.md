@@ -3,7 +3,7 @@
 The code in this project demonstrates a safer implementation of the
 patterns . It uses the Foreign Function and Memory (FFM) API (out of
 preview since Java 22). Executing this code results in a much cleaner
-unchecked java.lang.IndexOutOfBoundsException insted of a segmentation
+unchecked java.lang.IndexOutOfBoundsException instead of a segmentation
 fault (SIGSEGV).
 
 ```text
