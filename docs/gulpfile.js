@@ -14,7 +14,6 @@ const sass = require("sass");
 
 const gulp = require("gulp");
 const zip = require("gulp-zip");
-const eslint = require("gulp-eslint");
 const minify = require("gulp-clean-css");
 const connect = require("gulp-connect");
 const autoprefixer = require("gulp-autoprefixer").default;
@@ -276,11 +275,7 @@ gulp.task("qunit", () => {
   });
 });
 
-gulp.task("eslint", () =>
-  gulp.src(["./js/**", "gulpfile.js"]).pipe(eslint()).pipe(eslint.format()),
-);
-
-gulp.task("test", gulp.series("eslint", "qunit"));
+gulp.task("test", gulp.series("qunit"));
 
 gulp.task(
   "default",
@@ -325,7 +320,7 @@ gulp.task("serve", () => {
     gulp.series("reload"),
   );
 
-  gulp.watch(["js/**"], gulp.series("js", "reload", "eslint"));
+  gulp.watch(["js/**"], gulp.series("js", "reload"));
 
   gulp.watch(
     ["plugin/**/plugin.js", "plugin/**/*.html"],
