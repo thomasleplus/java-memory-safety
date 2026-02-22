@@ -1,5 +1,4 @@
 const fs = require("node:fs");
-const pkg = require("./package.json");
 const glob = require("glob");
 const yargs = require("yargs");
 const through = require("through2");
