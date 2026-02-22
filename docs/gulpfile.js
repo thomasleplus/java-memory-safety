@@ -14,7 +14,6 @@ const sass = require("sass");
 
 const gulp = require("gulp");
 const zip = require("gulp-zip");
-const header = require("gulp-header-comment");
 const eslint = require("gulp-eslint");
 const minify = require("gulp-clean-css");
 const connect = require("gulp-connect");
@@ -23,22 +22,6 @@ const autoprefixer = require("gulp-autoprefixer").default;
 const root = yargs.argv?.root ? yargs.argv.root : ".";
 const port = yargs.argv?.port ? yargs.argv.port : 8000;
 const host = yargs.argv?.host ? yargs.argv.host : "localhost";
-
-const cssLicense = `
-reveal.js ${pkg.version}
-${pkg.homepage}
-MIT licensed
-
-Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
-`;
-
-const jsLicense = `/*!
- * reveal.js ${pkg.version}
- * ${pkg.homepage}
- * MIT licensed
- *
- * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
- */\n`;
 
 // Prevents warnings from opening too many test pages
 process.setMaxListeners(20);
@@ -91,7 +74,6 @@ gulp.task("js-es5", () => {
       name: "Reveal",
       file: "./dist/reveal.js",
       format: "umd",
-      banner: jsLicense,
       sourcemap: true,
     });
   });
@@ -108,7 +90,6 @@ gulp.task("js-es6", () => {
     return bundle.write({
       file: "./dist/reveal.esm.js",
       format: "es",
-      banner: jsLicense,
       sourcemap: true,
     });
   });
@@ -218,7 +199,6 @@ gulp.task("css-core", () =>
     .pipe(compileSass())
     .pipe(autoprefixer())
     .pipe(minify({ compatibility: "ie9" }))
-    .pipe(header(cssLicense))
     .pipe(gulp.dest("./dist")),
 );
 
