@@ -8,6 +8,9 @@ Slides &#x1F4CA; [https://thomasleplus.github.io/java-memory-safety/bsides-londo
 
 Code &#x1F4DC; [https://github.com/thomasleplus/java-memory-safety/](https://github.com/thomasleplus/java-memory-safety/)
 
+Recording &#x1F3A5;
+[https://www.youtube.com/watch?v=xy46UYWCo2E](https://www.youtube.com/watch?v=xy46UYWCo2E)
+
 Note: I will give you some time to take a picture if you want to get
 these slides. And I will show this again at the end so if you think
 that you will not learn anything interesting during this talk,
