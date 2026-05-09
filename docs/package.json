@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/eslint-parser": "7.28.6",
-    "@babel/preset-env": "7.29.2",
+    "@babel/preset-env": "7.29.3",
     "@rollup/plugin-babel": "7.0.0",
     "@rollup/plugin-commonjs": "29.0.2",
     "@rollup/plugin-node-resolve": "16.0.3",
@@ -48,7 +48,7 @@
     "gulp-connect": "5.7.0",
     "gulp-zip": "6.1.0",
     "highlight.js": "11.11.1",
-    "marked": "18.0.2",
+    "marked": "18.0.3",
     "node-qunit-puppeteer": "2.2.1",
     "through2": "4.0.2",
     "qunit": "2.25.0",
