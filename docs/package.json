@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/eslint-parser": "7.28.6",
-    "@babel/preset-env": "7.29.3",
+    "@babel/preset-env": "7.29.5",
     "@rollup/plugin-babel": "7.0.0",
     "@rollup/plugin-commonjs": "29.0.2",
     "@rollup/plugin-node-resolve": "16.0.3",
@@ -52,7 +52,7 @@
     "node-qunit-puppeteer": "2.2.1",
     "through2": "4.0.2",
     "qunit": "2.25.0",
-    "rollup": "4.60.2",
+    "rollup": "4.60.3",
     "sass": "1.99.0",
     "yargs": "18.0.0"
   },
