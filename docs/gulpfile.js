@@ -1,5 +1,4 @@
-const fs = require("fs");
-const pkg = require("./package.json");
+const fs = require("node:fs");
 const glob = require("glob");
 const yargs = require("yargs");
 const through = require("through2");
@@ -14,31 +13,13 @@ const sass = require("sass");
 
 const gulp = require("gulp");
 const zip = require("gulp-zip");
-const header = require("gulp-header-comment");
-const eslint = require("gulp-eslint");
 const minify = require("gulp-clean-css");
 const connect = require("gulp-connect");
-const autoprefixer = require("gulp-autoprefixer");
+const autoprefixer = require("gulp-autoprefixer").default;
 
-const root = yargs.argv && yargs.argv.root ? yargs.argv.root : ".";
-const port = yargs.argv && yargs.argv.port ? yargs.argv.port : 8000;
-const host = yargs.argv && yargs.argv.host ? yargs.argv.host : "localhost";
-
-const cssLicense = `
-reveal.js ${pkg.version}
-${pkg.homepage}
-MIT licensed
-
-Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
-`;
-
-const jsLicense = `/*!
- * reveal.js ${pkg.version}
- * ${pkg.homepage}
- * MIT licensed
- *
- * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
- */\n`;
+const root = yargs.argv?.root ? yargs.argv.root : ".";
+const port = yargs.argv?.port ? yargs.argv.port : 8000;
+const host = yargs.argv?.host ? yargs.argv.host : "localhost";
 
 // Prevents warnings from opening too many test pages
 process.setMaxListeners(20);
@@ -76,7 +57,7 @@ babelConfigESM.presets[0][1].targets = {
   ],
 };
 
-let cache = {};
+const cache = {};
 
 // Creates a bundle with broad browser support, exposed
 // as UMD
@@ -91,7 +72,6 @@ gulp.task("js-es5", () => {
       name: "Reveal",
       file: "./dist/reveal.js",
       format: "umd",
-      banner: jsLicense,
       sourcemap: true,
     });
   });
@@ -108,7 +88,6 @@ gulp.task("js-es6", () => {
     return bundle.write({
       file: "./dist/reveal.esm.js",
       format: "es",
-      banner: jsLicense,
       sourcemap: true,
     });
   });
@@ -166,13 +145,13 @@ gulp.task("plugins", () => {
       }).then((bundle) => {
         cache[plugin.input] = bundle.cache;
         bundle.write({
-          file: plugin.output + ".esm.js",
+          file: `${plugin.output}.esm.js`,
           name: plugin.name,
           format: "es",
         });
 
         bundle.write({
-          file: plugin.output + ".js",
+          file: `${plugin.output}.js`,
           name: plugin.name,
           format: "umd",
         });
@@ -183,7 +162,7 @@ gulp.task("plugins", () => {
 
 // a custom pipeable step to transform Sass to CSS
 function compileSass() {
-  return through.obj((vinylFile, encoding, callback) => {
+  return through.obj((vinylFile, _encoding, callback) => {
     const transformedFile = vinylFile.clone();
 
     sass.render(
@@ -218,28 +197,27 @@ gulp.task("css-core", () =>
     .pipe(compileSass())
     .pipe(autoprefixer())
     .pipe(minify({ compatibility: "ie9" }))
-    .pipe(header(cssLicense))
     .pipe(gulp.dest("./dist")),
 );
 
 gulp.task("css", gulp.parallel("css-themes", "css-core"));
 
 gulp.task("qunit", () => {
-  let serverConfig = {
+  const serverConfig = {
     root,
     port: 8009,
     host: "localhost",
     name: "test-server",
   };
 
-  let server = connect.server(serverConfig);
+  const server = connect.server(serverConfig);
 
-  let testFiles = glob.sync("test/*.html");
+  const testFiles = glob.sync("test/*.html");
 
   let totalTests = 0;
   let failingTests = 0;
 
-  let tests = Promise.all(
+  const tests = Promise.all(
     testFiles.map((filename) => {
       return new Promise((resolve, reject) => {
         qunit
@@ -296,11 +274,7 @@ gulp.task("qunit", () => {
   });
 });
 
-gulp.task("eslint", () =>
-  gulp.src(["./js/**", "gulpfile.js"]).pipe(eslint()).pipe(eslint.format()),
-);
-
-gulp.task("test", gulp.series("eslint", "qunit"));
+gulp.task("test", gulp.series("qunit"));
 
 gulp.task(
   "default",
@@ -312,7 +286,7 @@ gulp.task("build", gulp.parallel("js", "css", "plugins"));
 gulp.task(
   "package",
   gulp.series(async () => {
-    let dirs = ["./index.html", "./dist/**", "./plugin/**", "./*/*.md"];
+    const dirs = ["./index.html", "./dist/**", "./plugin/**", "./*/*.md"];
 
     if (fs.existsSync("./lib")) dirs.push("./lib/**");
     if (fs.existsSync("./images")) dirs.push("./images/**");
@@ -335,17 +309,17 @@ gulp.task("serve", () => {
     livereload: true,
   });
 
-  const slidesRoot = root.endsWith("/") ? root : root + "/";
+  const slidesRoot = root.endsWith("/") ? root : `${root}/`;
   gulp.watch(
     [
-      slidesRoot + "**/*.html",
-      slidesRoot + "**/*.md",
+      `${slidesRoot}**/*.html`,
+      `${slidesRoot}**/*.md`,
       `!${slidesRoot}**/node_modules/**`, // ignore node_modules
     ],
     gulp.series("reload"),
   );
 
-  gulp.watch(["js/**"], gulp.series("js", "reload", "eslint"));
+  gulp.watch(["js/**"], gulp.series("js", "reload"));
 
   gulp.watch(
     ["plugin/**/plugin.js", "plugin/**/*.html"],

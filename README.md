@@ -4,7 +4,6 @@ A study of the limits of Java's memory safety.
 
 [![Maven](https://github.com/thomasleplus/java-memory-safety/workflows/Maven/badge.svg)](https://github.com/thomasleplus/java-memory-safety/actions?query=workflow:"Maven")
 [![NPM](https://github.com/thomasleplus/java-memory-safety/workflows/NPM/badge.svg)](https://github.com/thomasleplus/java-memory-safety/actions?query=workflow:"NPM")
-[![CodeQL](https://github.com/thomasleplus/java-memory-safety/workflows/CodeQL/badge.svg)](https://github.com/thomasleplus/java-memory-safety/actions?query=workflow:"CodeQL")
 
 ## Goals
 
@@ -30,8 +29,10 @@ operating system libraries.
 
 ## Presentation
 
-I presentated this stiday as a talk to various meetups and
-conferences. You can see the [slides](https://thomasleplus.github.io/java-memory-safety/).
+I presented this study as a talk at the [BSides London 2025](https://bsides.london/bsides-london-2025) conference.
+You can watch the [recording](https://www.youtube.com/watch?v=xy46UYWCo2E) or get the [slides](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025).
+
+There is also a longer version of the [slides](https://thomasleplus.github.io/java-memory-safety/).
 
 ## Code
 
@@ -43,17 +44,22 @@ proof of concept. It can also be used to benchmark the ability to
 detect memory safety issues with static application security testing
 (SAST) tools.
 
-The [`safe`](safe/) directory contains safer alternative implemetations.
+The [`safe`](safe/) directory contains safer alternative implementations.
 
 The [`exploit`](exploit/) directory contains scripts to automate the
 exploitation of the unsafe implementations above. The same code can be
 used against the safe implementations for comparison.
 
-The [`checkstyle`](checkstyle/) directory contains a Checkstyle
-configuration file to detect occurrences of non memory-safe Java code.
+## Scanners
 
-The [`spotbugs`](spotbugs/) directory contains a SpotBugs plugin to
-detect occurrences of non memory-safe Java code.
+Guidance on how to detect the Unsafe classes with various code
+scanning tools:
+
+- [Checkstyle](checkstyle/)
+- [PMD/Codacy](pmd/)
+- [Semgrep](semgrep/)
+- [SonarQube](sonar/)
+- [SpotBugs](spotbugs/)
 
 The [`reports`](reports/) directory contains some data that was
 gathered during the research needed for this project.
@@ -64,3 +70,19 @@ Results from this study are shared in this document and key takeaways
 are published in the OSSF Memory Safety SIG Best Practices series
 (especially [Memory-Safe By Default Languages](https://github.com/ossf/Memory-Safety/blob/main/docs/best-practice-memory-safe-by-default-languages.md)
 and [Interfacing Between Memory-Safe By Default and Non-Memory-Safe by Default Languages](https://github.com/ossf/Memory-Safety/blob/main/docs/best-practice-interfacing.md)).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Security
+
+Please read [SECURITY.md](SECURITY.md) for details on our security policy and how to report security vulnerabilities.
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+
+## License
+
+This project is licensed under the terms of the [LICENSE](LICENSE) file.

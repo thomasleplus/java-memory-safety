@@ -3,13 +3,13 @@ name: Maven Check Versions
 
 on:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: "0 0 1 * *"
   workflow_dispatch:
 
 permissions: {}
 
 jobs:
-  check:
+  maven-check-versions:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,8 +24,9 @@ jobs:
           ]
     name: Check versions of ${{ matrix.subproject }}
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Check the versions
         uses: docker://leplusorg/maven-check-versions:3.9.11@sha256:cabe45dc45c644032ba61b2f43e304baf382e834efe76d74a81c666b893c5dc2

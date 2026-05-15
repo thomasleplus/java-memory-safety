@@ -27,11 +27,11 @@ env:
   MAVEN_CLI_EXTRA_OPTS: ""
 
 jobs:
-  build_samples:
+  maven:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8, 11, 17, 21, 24]
+        java: [8, 11, 17, 21, 25]
         subproject:
           [
             "safe/java-lang-foreign-memorysegment",
@@ -49,8 +49,9 @@ jobs:
           set -euo pipefail
           IFS=$'\n\t'
           echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Set SOURCE_DATE_EPOCH
         run: |
@@ -58,11 +59,11 @@ jobs:
           IFS=$'\n\t'
           echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> "${GITHUB_ENV}"
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5.2.0
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
-      - name: Set MAVEN_EXTRA_OPTS
+      - name: Set MAVEN_CLI_EXTRA_OPTS for JDK 8
         if: matrix.java == 8
         shell: bash
         run: |
@@ -96,7 +97,7 @@ jobs:
           IFS=$'\n\t'
           echo "ARTIFACT_NAME=${{ matrix.subproject }}-${{ matrix.java }}" | sed -e 's!/!-!g' >> "${GITHUB_ENV}"
       - name: Upload artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ matrix.subproject }}/target/
@@ -116,19 +117,20 @@ jobs:
           set -euo pipefail
           IFS=$'\n\t'
           echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Set SOURCE_DATE_EPOCH
         run: |
           set -euo pipefail
           IFS=$'\n\t'
           echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> "${GITHUB_ENV}"
-      - name: Set up JDK 11
-        uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
+      - name: Set up JDK 17
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5.2.0
         with:
           distribution: temurin
-          java-version: 11
+          java-version: 17
       - name: Build with Maven
         working-directory: spotbugs
         shell: bash
@@ -138,7 +140,7 @@ jobs:
           # shellcheck disable=SC2086 # [Double quote to prevent globbing and word splitting]: splitting is desired for MAVEN_CLI_OPTS
           ./mvnw ${MAVEN_CLI_OPTS} verify
       - name: Upload artifacts
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: unsafe-plugin
           path: spotbugs/target/

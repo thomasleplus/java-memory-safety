@@ -1,0 +1,11 @@
+rules:
+  - id: no-unsafe-import
+    languages: [java]
+    message: "Do not use the Unsafe class"
+    severity: ERROR
+    patterns:
+      - pattern-either:
+          - pattern: |
+              import sun.misc.Unsafe
+          - pattern: |
+              import jdk.internal.misc.Unsafe

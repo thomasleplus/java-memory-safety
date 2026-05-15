@@ -11,7 +11,7 @@ on:
 permissions: {}
 
 jobs:
-  build:
+  npm:
     name: Build with NPM
     runs-on: ubuntu-latest
     steps:
@@ -22,8 +22,9 @@ jobs:
           IFS=$'\n\t'	
           echo "REPOSITORY=${GITHUB_REPOSITORY#*/}" >> "${GITHUB_ENV}"
       - name: Check out
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          fetch-depth: 1
           persist-credentials: false
       - name: Set SOURCE_DATE_EPOCH
         run: |
@@ -31,7 +32,7 @@ jobs:
           IFS=$'\n\t'	
           echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> "${GITHUB_ENV}"
       - name: Set up Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 24
       - name: Install dependencies

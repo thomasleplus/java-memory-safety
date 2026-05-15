@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import edu.umd.cs.findbugs.BugCollection;
 import edu.umd.cs.findbugs.BugCollectionBugReporter;
+import edu.umd.cs.findbugs.config.UserPreferences;
 import edu.umd.cs.findbugs.internalAnnotations.SlashedClassName;
 import edu.umd.cs.findbugs.test.AnalysisRunner;
 import edu.umd.cs.findbugs.test.matcher.BugInstanceMatcher;
@@ -54,7 +55,7 @@ class UnsafeDetectorTest {
         Arrays.stream(analyzeMe)
             .map(UnsafeDetectorTest::getFindbugsTestCasesFile)
             .toArray(Path[]::new);
-    bugReporter = runner.run(paths);
+    bugReporter = runner.run(UserPreferences.createDefaultUserPreferences(), paths);
   }
 
   private static Path getFindbugsTestCases() {

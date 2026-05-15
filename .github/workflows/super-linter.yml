@@ -27,7 +27,7 @@ permissions: {}
 # Set the Job #
 ###############
 jobs:
-  lint:
+  super-linter:
     # Name the Job
     name: Lint Code Base
     # Set the agent to run on
@@ -37,8 +37,11 @@ jobs:
     # Grant status permission for MULTI_STATUS #
     ############################################
     permissions:
+      # Required to read the code
       contents: read
+      # Required to access the container image
       packages: read
+      # Required to write the status
       statuses: write
 
     ##################
@@ -49,7 +52,7 @@ jobs:
       # Checkout the code base #
       ##########################
       - name: Checkout Code
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Full git history is needed to get a proper list of changed
           # files within `super-linter`
@@ -60,13 +63,19 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: super-linter/super-linter@ffde3b2b33b745cb612d787f669ef9442b1339a6 # v8.1.0
+        uses: super-linter/super-linter@9e863354e3ff62e0727d37183162c4a88873df41 # v8.6.0
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_GOOGLE_JAVA_FORMAT: false # FIXME: conflicts with checkstyle (e.g. max line length 80 vs 100)
           LINTER_RULES_PATH: .
+          SAVE_SUPER_LINTER_SUMMARY: true
+          ENABLE_GITHUB_ACTIONS_STEP_SUMMARY: true
           DEFAULT_BRANCH: main
           FILTER_REGEX_EXCLUDE: "(gradlew|gradlew\\.bat|gradle/.*|mvnw|mvnw\\.cmd|\\.m2/.*|\\.mvn/.*|docs/css/.*|docs/dist/.*|docs/js/.*|docs/node_modules/.*|docs/plugin/.*|reports/.*)$"
           JAVA_FILE_NAME: "google_checks.xml"
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
+          TRIVY_SCANNERS: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'vuln,misconfig,secret' || 'misconfig,secret'}}
+          BIOME_CONFIG_PATH: .biome.json
+          GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE: .zizmor.yml
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

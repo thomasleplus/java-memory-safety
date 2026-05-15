@@ -1,0 +1,18 @@
+<!-- markdownlint-disable MD041 -->
+
+### Get these slides
+
+![QR](../assets/images/bsides-london-2025-slides-qrcode.png)
+
+Slides &#x1F4CA; [https://thomasleplus.github.io/java-memory-safety/bsides-london-2025/](https://thomasleplus.github.io/java-memory-safety/bsides-london-2025/)
+
+Code &#x1F4DC; [https://github.com/thomasleplus/java-memory-safety/](https://github.com/thomasleplus/java-memory-safety/)
+
+Recording &#x1F3A5;
+[https://www.youtube.com/watch?v=xy46UYWCo2E](https://www.youtube.com/watch?v=xy46UYWCo2E)
+
+Note: I will give you some time to take a picture if you want to get
+these slides. And I will show this again at the end so if you think
+that you will not learn anything interesting during this talk,
+hopefully I will prove you wrong and you will get a second
+chance. Also all the code is available on GitHub as well.
