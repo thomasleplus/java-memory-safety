@@ -8,9 +8,11 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "rm -rf dist && cp -R node_modules/reveal.js/dist/. dist/ && find dist -name '*.d.ts' -delete"
+    "build": "rm -rf dist && cp -R node_modules/reveal.js/dist/. dist/ && find dist -name '*.d.ts' -delete",
+    "test": "node test/smoke.mjs"
   },
   "devDependencies": {
+    "playwright": "1.60.0",
     "reveal.js": "6.0.1"
   }
 }
