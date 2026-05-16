@@ -41,7 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           IFS=$'\n\t'
-          npm install
+          npm ci
       - name: Build
         shell: bash
         working-directory: docs

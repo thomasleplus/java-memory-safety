@@ -5,6 +5,9 @@
 node_modules
 *.tgz
 
+# Build output (generated from reveal.js npm package; deployed via Pages workflow)
+/dist
+
 # Yarn Integrity file
 .yarn-integrity
 

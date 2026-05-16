@@ -1,7 +1,7 @@
 @import url("dist/reset.css");
 @import url("dist/reveal.css");
 @import url("dist/theme/sky.css");
-@import url("plugin/highlight/monokai.css");
+@import url("dist/plugin/highlight/monokai.css");
 
 img[alt="GitHub"] {
   vertical-align: middle;
