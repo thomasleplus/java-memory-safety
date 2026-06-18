@@ -101,10 +101,10 @@
         </executions>
       </plugin>
       <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-compiler-plugin</artifactId>
-	<version>3.15.0</version>
-	<configuration>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.15.0</version>
+      <configuration>
           <release>${java.minVersion}</release>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
@@ -112,22 +112,22 @@
             <arg>-Xlint:all</arg>
             <arg>-Xdoclint:all</arg>
           </compilerArgs>
-	  <source>${java.minVersion}</source>
-	  <target>${java.minVersion}</target>
-	</configuration>
+        <source>${java.minVersion}</source>
+        <target>${java.minVersion}</target>
+      </configuration>
       </plugin>
       <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-source-plugin</artifactId>
-	<version>3.4.0</version>
-	<executions>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>3.4.0</version>
+      <executions>
           <execution>
             <id>attach-sources</id>
             <goals>
               <goal>jar-no-fork</goal>
             </goals>
           </execution>
-	</executions>
+      </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -146,14 +146,14 @@
         </executions>
       </plugin>
       <plugin>
-	<groupId>org.owasp</groupId>
+      <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
         <version>${dependencyCheck.version}</version>
         <configuration>
           <failBuildOnCVSS>${dependencyCheck.threshold}</failBuildOnCVSS>
-	  <failOnError>true</failOnError>
-	  <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
-	  <skip>${dependencyCheck.skip}</skip>
+        <failOnError>true</failOnError>
+        <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
+        <skip>${dependencyCheck.skip}</skip>
         </configuration>
         <executions>
           <execution>
@@ -164,13 +164,13 @@
         </executions>
       </plugin>
       <plugin>
-	<groupId>com.github.spotbugs</groupId>
-	<artifactId>spotbugs-maven-plugin</artifactId>
-	<version>${spotbugs.version}</version>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-maven-plugin</artifactId>
+      <version>${spotbugs.version}</version>
         <configuration>
-	  <effort>max</effort>
-	  <threshold>Low</threshold>
-	  <failOnError>false</failOnError>
+        <effort>max</effort>
+        <threshold>Low</threshold>
+        <failOnError>false</failOnError>
           <plugins>
             <plugin>
               <groupId>com.h3xstream.findsecbugs</groupId>
@@ -212,11 +212,11 @@
             </reports>
           </reportSet>
         </reportSets>
-	<configuration>
+      <configuration>
           <configLocation>../../checkstyle/unsafe_checks.xml</configLocation>
-	  <violationSeverity>info</violationSeverity>
-	  <failsOnError>false</failsOnError>
-	</configuration>
+        <violationSeverity>info</violationSeverity>
+        <failsOnError>false</failsOnError>
+      </configuration>
       </plugin>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
@@ -227,20 +227,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.28.0</version>
-	<configuration>
+      <configuration>
           <printFailingErrors>true</printFailingErrors>
           <rulesets>
             <ruleset>../../pmd/unsafe-ruleset.xml</ruleset>
           </rulesets>
-	</configuration>
+      </configuration>
       </plugin>
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
         <version>${dependencyCheck.version}</version>
         <configuration>
-	  <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
-	  <skip>${dependencyCheck.skip}</skip>
+        <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
+        <skip>${dependencyCheck.skip}</skip>
         </configuration>
         <reportSets>
           <reportSet>
