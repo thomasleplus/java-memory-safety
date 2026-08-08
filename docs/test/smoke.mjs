@@ -33,7 +33,7 @@ const server = createServer((req, res) => {
   }
   try {
     if (statSync(full).isDirectory()) {
-      res.writeHead(302, { Location: req.url + "/" });
+      res.writeHead(302, { Location: `${req.url}/` });
       res.end();
       return;
     }
