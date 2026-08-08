@@ -76,6 +76,13 @@ jobs:
           JAVA_FILE_NAME: "google_checks.xml"
           LINTER_RULES_PATH: .
           SAVE_SUPER_LINTER_SUMMARY: true
+          # Trivy runs inside the super-linter container and cannot see the
+          # runner's ~/.m2, so its Java vuln scanner resolves parent/transitive
+          # POMs (e.g. org.ow2:ow2) straight from Maven Central on every run.
+          # That repeatedly triggers HTTP 429 rate limiting, which is fatal.
+          # Offline scan skips those remote dependency-resolution requests (the
+          # vulnerability database download is unaffected).
+          TRIVY_OFFLINE_SCAN: true
           TRIVY_SCANNERS: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'vuln,misconfig,secret' || 'misconfig,secret'}}
           VALIDATE_ALL_CODEBASE: true
           # Only lint commit messages when the run was triggered by a commit
