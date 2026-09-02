@@ -11,9 +11,13 @@ on:
 permissions: {}
 
 env:
+  # The local repository path is absolute on purpose: the builds run with
+  # working-directory set to a subproject, so a relative path would give each
+  # subproject its own repository under itself, and the cache step below (which
+  # caches the workspace root) would find nothing to save.
   MAVEN_OPTS: >
     -Dhttps.protocols=TLSv1.2
-    -Dmaven.repo.local=.m2/repository
+    -Dmaven.repo.local=${{ github.workspace }}/.m2/repository
     -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN
     -Dorg.slf4j.simpleLogger.showDateTime=true
     -Djava.awt.headless=true
@@ -141,6 +145,17 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+      - name: Cache Maven dependencies
+        # Keyed separately from the maven job: sharing a key would mean both
+        # jobs race to save it, only the first save of a given key wins, and
+        # the 36 matrix jobs would almost always get there first, so this
+        # build's dependencies would never make it into a cache.
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .m2/repository
+          key: ${{ runner.os }}-plugins-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-plugins-maven-
       - name: Build with Maven
         working-directory: spotbugs
         shell: bash
