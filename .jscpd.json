@@ -6,6 +6,8 @@
     "docs/dist/**",
     "docs/js/**",
     "docs/plugin/**",
-    "reports/**"
+    "reports/**",
+    ".github/workflows/osv-scanner-pr.yml",
+    ".github/workflows/osv-scanner.yml"
   ]
 }
