@@ -63,7 +63,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>24</java.minVersion>
-    <spotbugs.version>4.10.4.1</spotbugs.version>
+    <spotbugs.version>4.10.5.0</spotbugs.version>
     <dependencyCheck.version>13.0.0</dependencyCheck.version>
     <!-- Off unless an NVD API key reaches the build; the nvd-api-key profile
          below turns it on. The scan genuinely cannot run without one: the NVD
